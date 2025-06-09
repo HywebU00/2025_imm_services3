@@ -1,0 +1,71 @@
+// 表單排版表格
+// ---------------------------------------------------------------- //
+table.formLayout {
+  width: 100%; margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  tr {
+    border-bottom: 1px dashed $grayLight;
+    &:last-child {border-bottom: none;}
+  }
+  th, td {
+    padding:16px 8px;
+    vertical-align: top;
+  }
+  
+  th, td:nth-child(odd) {
+    color: $fontColor;
+    text-align: right;
+    width: 15%;
+    padding-left: 20px; padding-top: calc(.9em + 16px);
+  }
+  td:nth-child(even) {
+    width: 35%;
+    text-align: left;
+
+    &[colspan="3"] {width: auto;}
+    // &>input:only-child{
+    //   &[type="text"],
+    //   &[type="email"],
+    //   &[type="search"],
+    //   &[type="tel"],
+    //   &[type="url"],
+    //   &[type="password"],
+    //   &[type="date"] {
+    //     width: 100%;
+    //   }
+    // }
+    // &>select:only-child {
+    //   width: 100%;
+    // }
+
+  }
+
+  @media screen and (max-width: calc($wwNormal - 1px)){
+    outline: 1px solid #f008;
+    outline-offset: -1px;
+    tr{
+      // outline: 1px dashed #f002;
+      display: block;
+      border-bottom:none;
+    }
+    th, td{
+      display: block; padding: 0;
+    }
+    th, td:nth-child(odd) {
+       width: auto;
+      text-align: left; padding:24px 0 4px;
+    }
+    td:nth-child(even){
+      width: auto;
+      padding: 0 0 24px;
+      border-bottom: 1px dashed $grayLight;
+
+      .datePicker{
+        width: 100%;
+      }
+
+    }
+  }
+}
+// ---------------------------------------------------------------- //

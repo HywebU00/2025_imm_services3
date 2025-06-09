@@ -7,93 +7,92 @@
   h3{
     border-bottom: 2px solid $grayLight;
     padding-bottom: 40px;
-  }
-
-  .formExtend {
-    border: none; padding: 0; margin: 50px 0;
-    .title {
-      display: block; width: 100%;
-      padding: 14px 16px 12px; margin: 0;
-      line-height: 1.3; text-align: center;
-      background-color: $primaryColor;
-      color: $white;
-    }
-    
-    table.formLayout{
-      width: 90%;
-      background-color: $grayPale;
-      &::before, &::after { content: ''; display: block; height: 44px;}
-      td:nth-child(even):last-child { padding-right: 8%;}
-    }
-    .note, .aloneInput, .aloneCheck { width: 90%; margin: 32px auto;}
-    .aloneCheck {display: block;}
-  }
-
-
+  } 
 }
+
+.title {
+  display: block; width: 100%;
+  padding: 14px 16px 12px; margin: 0;
+  line-height: 1.3; text-align: center;
+  background-color: $primaryColor;
+  color: $white;
+}
+
+.formExtend {
+  border: none; padding: 0; margin: 50px 0;
+  
+  table.formLayout{
+    width: 90%;
+    background-color: $grayPale;
+    &::before, &::after { content: ''; display: block; height: 44px;}
+    td:nth-child(even):last-child { padding-right: 8%;}
+  }
+  .note, .aloneInput, .aloneCheck { width: 90%; margin: 32px auto;}
+  .aloneCheck {display: block;}
+}
+
 // ---------------------------------------------------------------- //
 
 
 // 表單排版表格
 // ---------------------------------------------------------------- //
-table.formLayout {
-  width: 100%; margin: 0 auto;
-  border-collapse: collapse;
-  border-spacing: 0;
-  tr {
-    border-bottom: 1px dashed #ddd;
-    &:last-child {border-bottom: none;}
-  }
-  th, td {
-    padding:16px 8px;
-    vertical-align: top;
-  }
+// table.formLayout {
+//   width: 100%; margin: 0 auto;
+//   border-collapse: collapse;
+//   border-spacing: 0;
+//   tr {
+//     border-bottom: 1px dashed #ddd;
+//     &:last-child {border-bottom: none;}
+//   }
+//   th, td {
+//     padding:16px 8px;
+//     vertical-align: top;
+//   }
   
-  th, td:nth-child(odd) {
-    color: $fontColor;
-    text-align: right;
-    width: 15%;
-    padding-left: 20px; padding-top: calc(.9em + 16px);
-  }
-  td:nth-child(even) {
-    width: 35%;
-    text-align: left;
+//   th, td:nth-child(odd) {
+//     color: $fontColor;
+//     text-align: right;
+//     width: 15%;
+//     padding-left: 20px; padding-top: calc(.9em + 16px);
+//   }
+//   td:nth-child(even) {
+//     width: 35%;
+//     text-align: left;
 
-    &[colspan="3"] {width: auto;}
-    &>input:only-child{
-      &[type="text"],
-      &[type="email"],
-      &[type="search"],
-      &[type="tel"],
-      &[type="url"],
-      &[type="password"],
-      &[type="date"] {
-        width: 100%;
-      }
-    }
-    &>select:only-child {
-      width: 100%;
-    }
+//     &[colspan="3"] {width: auto;}
+//     &>input:only-child{
+//       &[type="text"],
+//       &[type="email"],
+//       &[type="search"],
+//       &[type="tel"],
+//       &[type="url"],
+//       &[type="password"],
+//       &[type="date"] {
+//         width: 100%;
+//       }
+//     }
+//     &>select:only-child {
+//       width: 100%;
+//     }
 
-  }
-  
-  
-
-}
+//   }
+// }
 // ---------------------------------------------------------------- //
 
 
 // 詳細地址
 // ---------------------------------------------------------------- //
 .addressSet {
-
   .roughly{
-    display: flex; flex-wrap: nowrap;
-    gap: 0 24px;
+    display: flex; flex-wrap: wrap; gap: 8px;
     &>label{
-      flex: 1 1 42%;
+      flex: 1 1 auto;
       white-space: nowrap;
       display: flex; align-items: center;
+
+      &:first-child {
+        flex: 1 0 100%;
+      }
       select{
         flex: 1 1 auto;
         margin-left: 8px;
@@ -105,16 +104,42 @@ table.formLayout {
   }
 
   .details{
-    display: flex; flex-wrap: wrap;
-    gap:10px 24px;
     margin: 10px 0;
+    display: flex; flex-wrap: wrap; gap:8px 24px;
     &>label{
-      flex: 0 0 auto;
+      flex: 0 1 auto;
       white-space: nowrap;
     }
     input{
       width: 6em; margin-right: 5px;
     }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .roughly {
+      flex-wrap: nowrap;
+      gap: 0 1.6%;
+      &>label {
+        flex: 1 1 42%;
+        &:first-child { flex: 1 1 42%;}
+        select {
+          flex: 1 1 auto;
+          margin-left: 8px;
+        }
+      }
+      &>input {
+        // flex: 0 1 15%;
+        // width: auto;
+      }
+    }
+
+    .details{
+      &>label{
+        flex: 0 0 auto;
+      }
+      // input{ width: 6em;}
+    }
+
   }
 }
 // ---------------------------------------------------------------- //
@@ -146,10 +171,10 @@ table.formLayout {
 // 表單中的 提示、警告、錯誤訊息；說明文字
 // ---------------------------------------------------------------- //
 .msg{
-  --color-hint: #00529B;
+  --color-info: #00529B;
   --color-warning: #C23E00;
   --color-error: #C40000;
-  --bgc-hint: #CFE5FC;
+  --bgc-info: #CFE5FC;
   --bgc-warning: #FFEFCF;
   --bgc-error: #FDD7DE;
 
@@ -165,9 +190,9 @@ table.formLayout {
     background-size: 20px;
   }
 
-  &.hint{
-    color: var(--color-hint);
-    background-color:var(--bgc-hint);
+  &.info {
+    color: var(--color-info);
+    background-color:var(--bgc-info);
     &::before{  
       background-image:url(../images/icon_msg_hint.svg);
     }
@@ -204,9 +229,9 @@ table.formLayout {
 
 // ---------------------------------------------------------------- //
 
-.note{
+.note, .hint{
   line-height: 1.6;
-  color: $hilight;
+  // color: $hilight;
 }
 .aloneInput {
   line-height: 1.6;
@@ -215,6 +240,14 @@ table.formLayout {
 
 .aloneCheck {
   line-height: 1.6;
+}
+
+.hint {
+  color: $fontColorLight; margin: 4px;
+  font-size: .89em;
+}
+.note {
+  &.important { color: $hilight;}
 }
 
 // 跳出小日曆，選日期
@@ -264,12 +297,12 @@ table.formLayout {
 // 系統已自動儲存當前進度
 // ---------------------------------------------------------------- //
 .savingMsg {
-  position: fixed; z-index: 88;
-  left: 50%; bottom: 50px; translate: -50% 0;
+  display: inline-block;
+  position: relative; left: 50%; translate: -50% 0;
   padding: 1em 1.5em;
   font-size: .83em; line-height: 1;
   border-radius: 2em;
-  background-color: $grayPale; color: $fontColorLight;
-  box-shadow: $shadow1 0 0 32px;
+  background-color: $grayLight; color: $fontColorLight;
+  // box-shadow: $shadow1 0 0 32px;
 }
 // ---------------------------------------------------------------- //

@@ -1,3 +1,7 @@
+form{
+  display: block; margin: 0;
+}
+
 input, select, textarea, button {
   font-size: inherit;
 }
@@ -16,9 +20,7 @@ input[type="date"]{
   background-color: $white;
   color: $secondaryColor30;
 
-  &.fullWidth {
-    width: 100%;
-  }
+  &.fullWidth {width: 100%;}
   &.hightLightThis { border-color: $hilight;}
 
   &:hover{
@@ -40,10 +42,14 @@ input[type="date"]{
     &:focus{box-shadow:none;}
   }
 
+  @media screen and (max-width: calc($wwNormal - 1px)){
+    // &.fullWidth { width: calc(100% - 1.2em - 2px);}
+  }
+
 }
-input[type="date"]::-webkit-datetime-edit{
-  font-size: 1.25em;
-}
+
+
+
 // ---------------------------------------------------------------- //
 
 

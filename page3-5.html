@@ -51,7 +51,7 @@
         <table class="formLayout">
           <tr>
             <td><abbr class="required">必填欄位</abbr> <label for="name">姓名</label></td>
-            <td><input id="name" type="text" value="陳澄"></td>
+            <td><input class="fullWidth" type="text" value="陳澄"></td>
             <td><label for="idNumber"><abbr class="required">必填欄位</abbr> 身分證號</label></td>
             <td><input class="fullWidth hightLightThis" id="idNumber" type="text" value="U156139432">
               <p class="msg error" style="display: block;">您輸入的格式有誤！<button class="closeThis" type="button">隱藏</button>
@@ -76,10 +76,10 @@
           </tr>
           <tr>
             <td><abbr class="required">必填欄位</abbr>聯絡電話</td>
-            <td><input type="tel" value="" placeholder="請輸入加上區碼的市話或行動電話號碼"></td>
+            <td><input class="fullWidth" type="tel" value="" placeholder="請輸入加上區碼的市話或行動電話號碼"></td>
             <td>目前職業</td>
             <td>
-              <select name="" id="">
+              <select class="fullWidth" name="" id="">
                 <option value="">請選擇</option>
                 <option value="">XXXXX</option>
                 <option value="">XXXXX</option>
@@ -127,7 +127,7 @@
 
         </table>
 
-        <section class="formExtend">
+        <section class="formExtend" style="display: none;">
           <div class="title">延伸填寫 - 代申請人及保證人資料</div>
           <p class="note">請填寫以下「代申請人」資料：</p>
           <div class="aloneInput"><abbr class="required">必填欄位</abbr>
@@ -152,8 +152,8 @@
             <tr>
               <td><abbr class="required">必填欄位</abbr>姓名</td>
               <td>
-                <input class="fullWidth" type="text" value="艾邦忙">
-                  <p class="msg hint hightLightThis" style="display: block;">這是一般提醒訊息區塊
+                <input class="fullWidth hightLightThis" type="text" value="艾邦忙">
+                  <p class="msg info" style="display: block;">這是一般提醒訊息區塊
                     <button class="closeThis" type="button">隱藏</button>
                   </p>
                   <p class="msg warning" style="display: block;">這似乎不是一個正常的格式
@@ -354,12 +354,13 @@
         <div class="savingMsg">系統已自動儲存當前進度</div>
 
         <div class="btnDiv">
-          <button type="button"> 暫存草稿（結束編輯）</button>
+          <div class="hasHiddenHint">
+            <button type="button"> 暫存草稿（結束編輯）</button>
+              <button type="button" class="hiddenHint">說明</button>
+              <div class="hintContent">點選暫存草稿，後續可至「暫存草稿匣」再繼續編輯，您已填寫的資料不會遺失，敬請放心使用</div>
+          </div>
           <button type="button" class="submit">下一步：親屬及子女</button>
         </div>
-        <button tabindex="0" role="button" class="infoTrigger">說明</button>
-        <div class="info">點選暫存草稿，後續可至「暫存草稿匣」再繼續編輯，您已填寫的資料不會遺失，敬請放心使用</div>
-
 
       </form>
 

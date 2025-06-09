@@ -1,22 +1,71 @@
+// 資料表格容器
 .meta{
-   h4 {
-    padding: 16px;
-    text-align: center; line-height: 1;
-    color: $white;
-    background-color: $primaryColor;
+  padding: 48px 0;margin: 16px auto 64px;
+  background-color: $grayPale;
+
+  table.data, .dataRef { width: 90%;}
+
+  .dataRef {
+    margin: 0 auto;
+    font-weight: bold; text-align: center;
+    &:has(+ table.data)  {
+      border-bottom: 1px solid $grayLight;
+      padding-bottom: 24px;
+      margin-bottom: 24px;
+    }
   }
-  table.data{
-    
+
+  .familyMembers {
+    margin-top: 24px;
+    .meta{
+      width: 90%; margin: 0 auto 24px;
+      padding: 0;
+      background-color: $white;
+      box-shadow: 0 2px 8px 0 $shadow1;
+      .caption{
+        background-color: #E1E7F7;
+        font-weight: bold; text-align: center;
+        padding:16px 24px;
+      }
+      table.data {
+        width: 100%;
+        &::before, &::after {
+          content: ''; display: block; height: 24px;
+        }
+
+        &:nth-of-type(even) {
+          background-color: #f6f6f6;
+        }
+      }
+    }
+
+  }
+
+  &.uploadFiles {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    &>.photo {
+      flex: 0 0 49%;
+      img{
+        display: block; margin: 0 auto;
+        max-height: 360px;
+      }
+    }
+    &>.data {
+      flex: 0 0 49%;
+      th, td { width: 50%;}
+    }
   }
 }
 
-
+// 資料表格
 table.data{
   width: 100%; margin: 0 auto;
   border-collapse: collapse;
   border-spacing: 0;
   line-height: 1.3;
-  tr{}
+
   
   th, td {
     padding: 16px;
@@ -24,19 +73,53 @@ table.data{
   }
   
   th {
-    position: relative;
+    position: relative; width: 20%;
     text-align: right;
+    font-weight: normal;
+    color: $fontColor;
     &::after {
       content: '';
-      position: absolute; top: 14px;bottom: 14px; right: 0; 
-      width: 1px;
-      background-color: $gray;
+      position: absolute; top: 17px; right: 0; 
+      width: 1px; height: 18px;
+      background-color: $grayDark;
     }
+    &:empty::after {display: none;}
   }
   
   td {
+    width: 30%;
     padding-right: 24px;
+    color: $fontColorVar;
 
   }
 
+}
+
+// 預覽送出
+.preview {
+  @extend %primSection; // 大圓角，有陰影的主要區塊
+  padding-left: 5%; padding-right: 5%;
+
+  h3{
+    border-bottom: 2px solid $grayLight;
+    padding-bottom: 40px;
+  }
+
+  h4 {
+    position: relative;
+    padding: 2px 0 0 20px; margin:44px 0 20px;
+    font-size: 1.11em; line-height: 1.1;
+    color: $fontColorDark;
+    &::before {
+      content: ''; position: absolute; left: 0;top: 0;
+      width: 8px; height: 24px;
+      background-color: $primaryColor;
+    }
+  }
+
+  .form{
+    width: 100%; margin: 0; padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
 }
