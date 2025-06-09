@@ -21,7 +21,7 @@
 		
 		],
 		"liveSassCompile.settings.generateMap": true,
-		"liveServer.settings.port": 5501,
+		"liveServer.settings.port": 5502,
 		"github.copilot.enable": {
 			"css": false
 		}
