@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "../2025_imm_services3"
+		}
+	],
+	"settings": {
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "compressed",
+				"extensionName": ".css",
+				"savePath": "~/../css"
+			}
+		],
+		"liveSassCompile.settings.includeItems": [
+			"/scss/style.scss"
+		],
+		"liveSassCompile.settings.showOutputWindowOn": "Warning",
+		"liveSassCompile.settings.autoprefix": [
+		
+		
+		],
+		"liveSassCompile.settings.generateMap": true,
+		"liveServer.settings.port": 5501,
+		"github.copilot.enable": {
+			"css": false
+		}
+	}
+}
