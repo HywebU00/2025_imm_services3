@@ -1,0 +1,108 @@
+input, select, textarea, button {
+  font-size: inherit;
+}
+// 文字輸入框
+// ---------------------------------------------------------------- //
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="date"]{
+  padding: 0 .6em; margin: 5px 0; height: 2.7em;
+  border-radius: $radius;
+  border: 1px solid $grayLight;
+  background-color: $white;
+  color: $secondaryColor30;
+
+  &.fullWidth {
+    width: 100%;
+  }
+  &.hightLightThis { border-color: $hilight;}
+
+  &:hover{
+    border-color: $grayDark;
+  }
+  &:focus {
+    border-color: $grayDark;
+    box-shadow: $grayDark 0 0 0 1px;
+    outline: none;
+  }
+
+
+  &::selection {
+    background-color: $fontColorLight; color: $white;
+  }
+  &[readonly]{
+    background-color: $grayLight; color: $fontColor;
+    border-color: $grayLight;
+    &:focus{box-shadow:none;}
+  }
+
+}
+input[type="date"]::-webkit-datetime-edit{
+  font-size: 1.25em;
+}
+// ---------------------------------------------------------------- //
+
+
+// 下拉選單
+// ---------------------------------------------------------------- //
+select {
+  height: 2.8em;
+  margin: 5px 0; padding: 0 40px 0 .6em;
+  border-radius: $radius;
+  border: 1px solid $grayLight;
+  background-color: $white;
+  color: $primaryColor;
+
+  &:hover{
+    border-color: $grayDark;
+  }
+  &:focus {
+    border-color: $grayDark;
+    box-shadow: $grayDark 0 0 0 1px;
+    outline: none;
+  }
+
+}
+// ---------------------------------------------------------------- //
+
+
+// 按鈕
+// ---------------------------------------------------------------- //
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  cursor: pointer;
+  height: 2.7em;margin: 5px;
+  border-radius: $radius;
+  outline: none;
+}
+// ---------------------------------------------------------------- //
+
+
+// ---------------------------------------------------------------- //
+input[type="radio"],
+input[type="checkbox"]{
+  width: 1.2em; height: 1.2em;
+  margin: -3px 5px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+    // box-shadow: $grayDark 0 0 0 1px;
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+// ---------------------------------------------------------------- //
+// ---------------------------------------------------------------- //
+
+
+

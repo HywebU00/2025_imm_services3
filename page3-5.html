@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陸配依親居留＿線上申請</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="siteHeader">
+    <h1>
+      <img src="publicData/h1.png" alt="內政部移民署 線上服務">
+    </h1>
+    <div class="flexBox">
+      <section class="search">
+        <form action="">
+          <input type="text" placeholder="搜尋關鍵字">
+          <button type="button">查詢</button>
+        </form>
+      </section>
+      <div class="whoIs">
+        <img src="publicData/avatar.png" alt="">
+        <a href="#">陳澄</a>
+      </div>
+      <div class="yourMessage">
+        <a aria-label="你有2則訊息" href="#"></a>
+        <span class="count">2</span>
+      </div>
+      <button class="langSwitch" type="button">EN</button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <h2>陸配依親居留線上送件服務</h2>
+
+    <section class="steps">
+      <ol>
+        <li><i>1</i><span>申請人資料</span></li>
+        <li class="now"><i>2</i><span>臺灣配偶</span></li>
+        <li><i>3</i><span>親屬及子女</span></li>
+        <li><i>4</i><span>文件上傳</span></li>
+        <li><i>5</i><span>預覽送出</span></li>
+      </ol>
+    </section>
+
+    <section class="form">
+      <h3>臺灣配偶資料</h3>
+      <p class="note"><abbr class="required">必填欄位</abbr>為必須填寫的資料欄位</p>
+      <form action="">
+        <table class="formLayout">
+          <tr>
+            <td><abbr class="required">必填欄位</abbr> <label for="name">姓名</label></td>
+            <td><input id="name" type="text" value="陳澄"></td>
+            <td><label for="idNumber"><abbr class="required">必填欄位</abbr> 身分證號</label></td>
+            <td><input class="fullWidth hightLightThis" id="idNumber" type="text" value="U156139432">
+              <p class="msg error" style="display: block;">您輸入的格式有誤！<button class="closeThis" type="button">隱藏</button>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required">必填欄位</abbr>性別</td>
+            <td>
+              <div class="optionPool">
+                <label><input name="xxx" type="radio">男</label>
+                <label><input name="xxx" type="radio">女</label>
+              </div>
+            </td>
+            <td><label for="date-of-birth">出生日期</label></td>
+            <td>
+              <div class="datePicker">
+                <input id="date-of-birth" type="text" value="1979/02/01">
+                <button type="button" class="date"></button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required">必填欄位</abbr>聯絡電話</td>
+            <td><input type="tel" value="" placeholder="請輸入加上區碼的市話或行動電話號碼"></td>
+            <td>目前職業</td>
+            <td>
+              <select name="" id="">
+                <option value="">請選擇</option>
+                <option value="">XXXXX</option>
+                <option value="">XXXXX</option>
+                <option value="">XXXXX</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr class="required">必填欄位</abbr>聯絡地址</td>
+            <td colspan="3">
+              <div class="addressSet">
+                <div class="roughly">
+                  <label>縣市
+                    <select name="" id="">
+                      <option value="">臺北市</option>
+                      <option value="">XXXXX</option>
+                      <option value="">XXXXX</option>
+                    </select>
+                  </label>
+                  <label>鄉鎮市區
+                    <select name="" id="">
+                      <option value="">中正區</option>
+                      <option value="">XXXXX</option>
+                      <option value="">XXXXX</option>
+                    </select>
+                  </label>
+                  <input aria-label="郵遞區號" type="text" value="100">
+                </div>
+                <div class="details">
+                  <label><input type="text">村</label>
+                  <label><input type="text">里</label>
+                  <label><input type="text">鄰</label>
+                  <label><input type="text" value="廣州">街</label>
+                  <label><input type="text">路</label>
+                  <label><input type="text">段</label>
+                  <label><input type="text">巷</label>
+                  <label><input type="text">弄</label>
+                  <label><input type="text" value="15">門牌號</label>
+                  <label><input type="text">樓室</label>
+                </div>
+                <input class="fullWidth" type="text" readonly value="臺北市中正區廣州街15號">
+              </div>
+            </td>
+          </tr>
+
+        </table>
+
+        <section class="formExtend">
+          <div class="title">延伸填寫 - 代申請人及保證人資料</div>
+          <p class="note">請填寫以下「代申請人」資料：</p>
+          <div class="aloneInput"><abbr class="required">必填欄位</abbr>
+            <strong>本案「代申請人」是否為上述之臺灣配偶？ </strong>(若為移民機構或甲種旅行社代為申請，須額外填寫相關資料)
+            <div class="optionPool">
+              <label><input name="yesorno" type="radio">是</label>
+              <label><input name="yesorno" type="radio">否</label>
+            </div>
+          </div>
+
+          <table class="formLayout">
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>與申請人關係</td>
+              <td>
+                <select>
+                  <option value="" selected>移民機構</option>
+                  <option value="">...</option>
+                  <option value="">...</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>姓名</td>
+              <td>
+                <input class="fullWidth" type="text" value="艾邦忙">
+                  <p class="msg hint hightLightThis" style="display: block;">這是一般提醒訊息區塊
+                    <button class="closeThis" type="button">隱藏</button>
+                  </p>
+                  <p class="msg warning" style="display: block;">這似乎不是一個正常的格式
+                    <button class="closeThis" type="button">隱藏</button>
+                  </p>
+                  <p class="msg error" style="display: block;">您輸入的帳號密碼有誤！
+                    <button class="closeThis" type="button">隱藏</button>
+                  </p>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>身分證號</td>
+              <td><input type="text" value="V325579412"></td>
+            </tr>
+            <tr>
+              <td><label for="date-of-birth"><abbr class="required">必填欄位</abbr>出生日期</label></td>
+              <td>
+                <div class="datePicker">
+                  <input id="date-of-birth" type="text" value="1991-01-24">
+                  <button type="button" class="date"></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>聯絡電話</td>
+              <td><input type="tel" value="0988888888"></td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>聯絡地址</td>
+              <td>
+                <div class="addressSet">
+                  <div class="roughly">
+                    <label>縣市
+                      <select name="" id="">
+                        <option value="">臺北市</option>
+                        <option value="">XXXXX</option>
+                        <option value="">XXXXX</option>
+                      </select>
+                    </label>
+                    <label>鄉鎮市區
+                      <select name="" id="">
+                        <option value="">中正區</option>
+                        <option value="">XXXXX</option>
+                        <option value="">XXXXX</option>
+                      </select>
+                    </label>
+                    <input aria-label="郵遞區號" type="text" value="100">
+                  </div>
+                  <div class="details">
+                    <label><input type="text">村</label>
+                    <label><input type="text">里</label>
+                    <label><input type="text">鄰</label>
+                    <label><input type="text" value="廣州">街</label>
+                    <label><input type="text">路</label>
+                    <label><input type="text">段</label>
+                    <label><input type="text">巷</label>
+                    <label><input type="text">弄</label>
+                    <label><input type="text" value="15">門牌號</label>
+                    <label><input type="text">樓室</label>
+                  </div>
+                  <input class="fullWidth" type="text" readonly value="臺北市中正區廣州街15號">
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <div class="aloneInput">
+            <abbr class="required">必填欄位</abbr> 
+            <strong>本案「保證人」是否為上述之臺灣配偶？</strong>
+            <div class="optionPool">
+              <label><input name="yesorno" type="radio">是</label>
+              <label><input name="yesorno" type="radio">否</label>
+            </div>
+          </div>          
+          <p class="note">請填寫以下「保證人」資料：</p>
+
+          <label class="aloneCheck"><input name="AAAAA" type="checkbox">同「代申請人」資訊</label>
+
+          <table class="formLayout">
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>與申請人關係</td>
+              <td>
+                <select>
+                  <option value="" selected>移民機構</option>
+                  <option value="">...</option>
+                  <option value="">...</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>中文姓名</td>
+              <td>
+                <input class="fullWidth" type="text" value="艾邦忙">
+                  <p class="msg hint">這是一般提醒訊息區塊
+                    <button class="closeThis" type="button">隱藏</button>
+                  </p>
+                  <p class="msg warning">這似乎不是一個正常的格式
+                    <button class="closeThis" type="button">隱藏</button>
+                  </p>
+                  <p class="msg error">您輸入的帳號密碼有誤！
+                    <button class="closeThis" type="button">隱藏</button>
+                  </p>
+              </td>
+            </tr>
+            <tr>
+              <td>英文姓名</td>
+              <td>
+                <div class="fullNameSet">
+                  <label>姓<input type="text"></label>
+                  <label>名<input type="text"></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>性別</td>
+              <td>
+                <div class="optionPool">
+                  <label><input name="xxx" type="radio">男</label>
+                  <label><input name="xxx" type="radio">女</label>
+                </div>
+                <p class="msg warning" style="display: block;">此為必填欄位<button class="closeThis" type="button">隱藏</button></p>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>身分證號 /<br>居留證號</td>
+              <td><input type="text" value="V325579412"></td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 出生日期</td>
+              <td>
+                <div class="datePicker">
+                  <input id="date-of-birth" type="text" value="1991-01-24">
+                  <button type="button" class="date"></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 聯絡電話</td>
+              <td><input type="tel" value="0988888888"></td>
+            </tr>
+
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 服務機關</td>
+              <td><input class="fullWidth hightLightThis" type="text" value="">
+                <p class="msg warning" style="display: block;">此為必填欄位<button class="closeThis" type="button">隱藏</button></p>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 職務名稱</td>
+              <td><input class="fullWidth hightLightThis" type="text" value="">
+                <p class="msg warning" style="display: block;">此為必填欄位<button class="closeThis" type="button">隱藏</button></p>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td><abbr class="required">必填欄位</abbr>聯絡地址</td>
+              <td>
+                <div class="addressSet">
+                  <div class="roughly">
+                    <label>縣市
+                      <select name="" id="">
+                        <option value="">臺北市</option>
+                        <option value="">XXXXX</option>
+                        <option value="">XXXXX</option>
+                      </select>
+                    </label>
+                    <label>鄉鎮市區
+                      <select name="" id="">
+                        <option value="">中正區</option>
+                        <option value="">XXXXX</option>
+                        <option value="">XXXXX</option>
+                      </select>
+                    </label>
+                    <input aria-label="郵遞區號" type="text" value="100">
+                  </div>
+                  <div class="details">
+                    <label><input type="text">村</label>
+                    <label><input type="text">里</label>
+                    <label><input type="text">鄰</label>
+                    <label><input type="text" value="廣州">街</label>
+                    <label><input type="text">路</label>
+                    <label><input type="text">段</label>
+                    <label><input type="text">巷</label>
+                    <label><input type="text">弄</label>
+                    <label><input type="text" value="15">門牌號</label>
+                    <label><input type="text">樓室</label>
+                  </div>
+                  <input class="fullWidth" type="text" readonly value="臺北市中正區廣州街15號">
+                </div>
+              </td>
+            </tr>
+          </table>
+
+        </section>
+
+
+        <div class="savingMsg">系統已自動儲存當前進度</div>
+
+        <div class="btnDiv">
+          <button type="button"> 暫存草稿（結束編輯）</button>
+          <button type="button" class="submit">下一步：親屬及子女</button>
+        </div>
+        <button tabindex="0" role="button" class="infoTrigger">說明</button>
+        <div class="info">點選暫存草稿，後續可至「暫存草稿匣」再繼續編輯，您已填寫的資料不會遺失，敬請放心使用</div>
+
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <footer class="siteFooter">
+    <div class="contactInfo">
+      <p>常見問題：請見 <a href="#">內政部移民署【網路申辦服務】常見問題及解答</a> 或 <a href="#">移民署中文網-常見問題</a></p>
+      <p>負責單位：入出國事務組-停留科</p>
+      <p>聯絡電話：+886-2-23889393 分機1039</p>
+    </div>
+    <div class="base">
+      <ul>
+        <li><a href="#">隱私權保護服務及宣告</a></li>
+        <li><a href="#">安全防護與回復機制</a></li>
+        <li><a href="#">資訊安全宣告</a></li>
+      </ul>
+      <div>
+        <p>內政部移民署 版權所有 © NATIONAL IMMIGRATION AGENCY</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

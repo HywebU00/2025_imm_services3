@@ -1,0 +1,152 @@
+// 版頭查詢
+// ---------------------------------------------------------------- //
+.search{
+  position: fixed; top: 80px; left: 0; right: 0;
+  z-index: 199;
+  padding: 16px;
+  font-size: 1em;
+  background-color: $bodyBg;
+  box-shadow: rgb(0 0 0 / 0.2) 0 6px 9px -3px;
+
+  input, button { font-size: 1em;border: none; outline: none;}
+  
+  input[type="text"] {
+    width: calc(100% - 3em);
+    height: 2.67em;
+    padding: 0 3em 0 1em; margin: 0;
+    border-radius: 2em;
+    font-size: 1em;
+    background-color: $white;
+    border: none;
+    transition: .2s;
+    &:hover{
+      box-shadow:$secondaryColor 0 0 0 0 inset,$white 0 0 0 2px;
+      
+    }
+    &:focus {
+      box-shadow:$secondaryColor 0 0 0 2px inset, $white 0 0 0 3px;
+    }
+  }
+  
+  button {
+    position: absolute; top: 16px; right: 16px;
+    width: 2.67em; height: 2.67em;
+    padding: 0; margin: 0;
+    text-indent: -20em; // 隱藏文字
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: $white;
+    transition: .2s;
+    &::before{
+      content: ''; display: block;
+      width: 100%; height: 100%;
+      background:transparent url(../images/icon_search.svg) no-repeat center center;
+      background-size: 20px 20px;
+      transition: .2s;
+    }
+    &:hover {
+      background-color: $grayLight;
+    }
+    &:focus {
+      background-color: $secondaryColor;
+      &::before {
+        filter: brightness(4);}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+      position: relative;width: 440px;
+      padding: 0; top: auto; left: auto; right: auto;
+      box-shadow: none;
+      background-color: transparent;
+      input[type="text"] { width: 100%; }
+      button{
+        top: 4px; right: 4px;
+        width: calc(2.67em - 8px); height: calc(2.67em - 8px);
+        background-color: transparent;
+      }
+
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+
+// ---------------------------------------------------------------- //
+.btnDiv {
+  display: flex; justify-content: center; gap: 40px;
+  padding: 24px; margin: 40px auto;
+  .button{display: inline-block;}
+  .button>a { display: block; text-decoration: none; color: $fontColorLight;}
+
+  button, 
+  input[type="button"], input[type="submit"], input[type="reset"],
+  .button>a {
+    padding: 0 1em; min-width: 11em;
+    height: 3.25em; line-height: 3.25;
+    font-size: 1.11em; font-weight: bold; text-align: center; 
+    border: none; outline: none;
+    border-radius: $radius1;
+
+    @extend %gradient3;
+    color: $fontColorLight;
+    box-shadow:$grayDark 0 0 0 0 inset, $white 0 0 0 0, 1px 3px 6px 0 rgb(0 0 0 / 0.15);
+    // overflow: hidden;
+    transition: .2s;
+    &:hover{
+      translate: 0 -5px;
+      box-shadow:$grayDark 0 0 0 0 inset, $white 0 0 0 0, 0 12px 12px -4px rgb(0 0 0 / 0.15);
+    }
+    &:focus {
+      translate: 0 0;
+      box-shadow:$grayDark 0 0 0 1px inset, $white 0 0 0 3px, 0 3px 8px 1px rgb(0 0 0 / 0.2);
+    }
+  }
+  button, 
+  input[type="button"], input[type="submit"], input[type="reset"] {
+    &.submit{
+      @extend %gradient2;
+      color: $white;
+      box-shadow:$white 0 0 0 0 inset, $secondaryColor 0 0 0 0, 1px 3px 6px 0 rgb(0 0 0 / 0.3);
+
+      &:hover{
+        translate: 0 -5px;
+        box-shadow:$white 0 0 0 0 inset, $secondaryColor 0 0 0 0, 0 12px 12px -4px rgb(0 0 0 / 0.3);
+      }
+      &:focus {
+        translate: 0 0;
+        box-shadow:$white 0 0 0 1px inset, $secondaryColor 0 0 0 3px, 0 3px 8px 1px rgb(0 0 0 / 0.35);
+      }   
+    }
+
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+// ---------------------------------------------------------------- //
+  button.infoTrigger{
+    position: relative; left: 30%; top: -60px;
+    margin: 0;
+    border: none; background: none; box-shadow: none;
+    font-style: normal; font-size: .83em;
+    color: $hilight;
+    height: 2.2em;
+    padding: 0 6px 0 24px;
+    background: url(../images/icon_info.svg) no-repeat 1px .4em;
+  }
+  .info{
+    position: relative; left: 30%; top: -66px;
+
+    font-size: 1rem; line-height: 1.8;
+    color: $fontColor;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 15px 50px -20px $shadow1;
+    width: 290px; padding:22px 16px 16px;
+    
+  }
+// ---------------------------------------------------------------- //
+
+

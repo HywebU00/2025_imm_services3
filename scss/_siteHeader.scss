@@ -1,0 +1,151 @@
+.siteHeader {
+  --icon-size : 48px;
+
+  position: relative; z-index: 9;
+  padding: 16px 0; margin: 0 auto;
+
+  h1{
+    position: absolute; left: 2%; top: 16px;
+    margin: 0; padding: 0;
+    height: var(--icon-size); width: 160px;
+    background: url(../images/h1_mobile.png) no-repeat 0 0;
+    background-size: auto 100%;
+    img{ display: none; }
+  }
+
+  // 小圓圖示
+  .whoIs, .yourMessage, .langSwitch{ 
+    font-size: .89em;
+  }
+  .yourMessage>a, .langSwitch, .searchCtrl {
+    width: var(--icon-size); height: var(--icon-size); 
+    border-radius: 50%;border: none;
+    background-color: $white;
+    @extend %shadowChange;
+  }
+
+  // 查詢區開關 button
+  .searchCtrl {
+    font-size: 0;
+    background:$white url(../images/icon_search.svg) no-repeat center center;
+  }
+
+  // 使用者圖示
+  .whoIs{
+    display: none;
+    position: relative;border-radius: 30px;
+    transition: .2s;
+    img{
+      position: absolute; left: 0; top: 0;
+      width: var(--icon-size); height: var(--icon-size); 
+      border-radius: 50%;
+    }
+    a { 
+      position: relative;
+      display: block; width: 100%;
+      height: var(--icon-size); line-height: var(--icon-size);
+      padding: 0 8px 0 58px;
+      color: $fontColor;
+      font-weight: bold;
+      outline: none;
+    }
+    &:hover{
+      background-color: $white;
+      box-shadow: $white 0 0 0 3px;
+    }
+    &:has(a:focus){
+      background-color: $white;
+      box-shadow:$white 0 0 0 2px, $grayDark 0 0 0 4px;
+    }
+  }
+
+  // header 圖示的陰影變化
+  %shadowChange {
+    box-shadow:$grayDark 0 0 0 0 inset, $white 0 0 0 0, rgb(30 30 30 / .1) 0 2px 8px 0;
+    transition: .2s;
+    &:hover{
+      box-shadow: $grayDark 0 0 0 0 inset, $white 0 0 0 3px, rgb(30 30 30 / .2) 0 2px 8px 2px;
+    }
+    &:focus{
+      box-shadow: $grayDark 0 0 0 2px inset, $white 0 0 0 3px, rgb(30 30 30 / .2) 0 2px 8px 2px;
+      outline: none;
+    }
+  }
+
+  // 訊息通知
+  .yourMessage{
+    position: relative;
+    &>a{
+      display: block;
+      background: $white url(../images/icon_notify.svg) no-repeat center center;
+      background-size: 20px auto;
+    }
+    .count {
+      font-size: .67em;
+      min-width: 1.55em; height: 1.55em; line-height: 1.6em;
+      text-align: center; border-radius: 1em;
+      position: absolute; top: -5px; right: -5px;
+      background-color: $hilight; color: $white;
+    }
+  }
+
+  // 語系切換
+  .langSwitch{
+    font-weight: bold; color: $fontColorLight;
+  }
+  
+  .viewMore {
+    position: relative;
+    &::before {
+      content: ''; position: absolute; top: 22px; left: 22px;
+      width: 4px;height: 4px; border-radius: 2px;
+      box-shadow: 0 -7px 0 0 $fontColor, 0 7px 0 0 $fontColor;
+      background-color: $fontColor;
+    }
+  }
+
+  .search {display: none;}
+
+  // 排版
+  .flexBox {
+    margin-right: 2%; margin-left: calc(2% + 170px);
+
+    display: flex; flex-flow: row nowrap; align-items: center;
+    justify-content: flex-end; gap: 10px;
+  }  
+
+  @media screen and (min-width: $wwNormal){
+
+    padding: 40px 20px;
+    max-width: $wwMaximum;
+
+    display: flex; flex-flow: row nowrap; justify-content: space-between;
+    align-items: center;
+
+    h1{
+      position: static; height: auto; width: auto;
+      background: none;
+      img{width: 354px; display: block;}
+    }
+
+    // 小圓圖示
+    .searchCtrl {display: none;}
+    .search {display: block;}
+    .whoIs{display: block; white-space: nowrap;}
+    .search {
+      flex: 1 1 auto;
+      width: auto; max-width: 500px;
+      margin-right: 8px;
+    }
+
+    // 排版
+    .flexBox {
+      flex: 0 1 calc(100% - 390px);
+      margin: 0; gap: 16px;
+    }
+
+  }
+}
+
+
+

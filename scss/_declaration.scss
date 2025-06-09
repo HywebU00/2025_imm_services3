@@ -1,0 +1,25 @@
+// 系統使用聲明事項
+.declaration {
+  @extend %primSection; // 大圓角，有陰影的主要區塊
+
+  h3{ text-align: center; color: $fontColor; font-size: 1.2em;}
+  &>ul, &>ol, &>p{
+    line-height: 1.6;
+     margin: 0 auto;
+  }
+  li {
+    margin-bottom: 1.1em;
+    &:last-child{ margin-bottom: 0; }
+  }
+  em{
+    font-style: normal; color: $hilight;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    padding-left: 11.4%; padding-right: 11.4%;
+  }
+  @media screen and (min-width: $wwMaximum){
+    padding-left: calc($wwMaximum*.114);
+    padding-right: calc($wwMaximum*.114);
+  }
+}

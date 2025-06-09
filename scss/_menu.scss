@@ -1,0 +1,149 @@
+// 請選擇欲辦理的項目
+.menu {
+  @extend %primSection; // 大圓角，有陰影的主要區塊
+  padding-left: 0; padding-right: 0;
+  z-index: 999; position: relative;
+  nav{
+    ul{list-style: none; padding: 0;margin: 0;}
+    li{ margin: 0; padding: 0;}
+    a{ display: block; position: relative;text-decoration: none;}
+    &>ul{
+      list-style: none; padding: 0; margin: 0 8%;
+      font-size: 1.5em; text-align: center;
+      &>li {
+        position: relative;
+        margin-bottom: 16px;padding: 0;
+        &>a {
+          padding: 32px 20px;
+          height: 100%;
+          color: $white; 
+          border-radius: $radiusBig;
+          @extend %gradient1; 
+          box-shadow: 0 3px 6px 0 rgba(0 0 0 / .15);
+          transition: .24s;
+
+          &::before {
+            content: ""; display: block; margin: 0 auto 16px;
+            width: 52px; height: 52px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100%;
+          }
+          &:hover {
+            translate: 0 -6px;
+            box-shadow: 0 26px 20px -12px rgba(0 0 0 / .25);
+          }
+          &:focus {
+            translate: 0 0;
+            box-shadow: $white 0 0 0 2px, $secondaryColor 0 0 0 7px;
+          }
+          &:focus + ul {opacity: 1;margin-top: -14px;}
+        }
+        
+        // hover 效果（暫時看hover 效果，記得刪除）
+        &:hover {
+          & > ul{
+            opacity: 1;margin-top: -14px;
+          }
+        }
+        &:nth-child(1)>a::before{background-image: url(../images/menu_icon1.svg);}
+        &:nth-child(2)>a::before{background-image: url(../images/menu_icon2.svg);}
+        &:nth-child(3)>a::before{background-image: url(../images/menu_icon3.svg);}
+        &:nth-child(4)>a::before{background-image: url(../images/menu_icon4.svg);}
+      }
+
+      // 次選單
+      ul{
+        opacity: 0; transition: .2s;
+
+        position: absolute; z-index: 9; top: auto; left: 10%;
+        margin-top: 0;
+        width: fit-content;
+        text-align: left;
+        font-size: .72em;
+        padding: 8px;
+        background-color: $white;
+        box-shadow: 0 20px 50px -20px rgba(34, 34, 34, 0.3);
+        border-radius: $radius1;
+        &::before {
+          content: ""; position: absolute; left: 28px; top: -10px;
+          width: 3px; height: 3px;
+          border-width: 0 9px 12px;
+          border-style: solid;
+          border-color: transparent transparent $white transparent;
+        }
+        li{
+          margin: 2px; padding: 0;
+          a{
+            position: relative;
+            padding: 10px 28px 10px 56px;
+            border-radius: $radius;
+            color: $fontColorLight;
+            transition: .2s;
+
+            &::before {
+              content: ""; position: absolute; left: 20px; top: 12px;
+              width: 24px; height: 24px;
+              background-repeat: no-repeat;
+              background-position: 0 0;
+              background-size: 100%;
+              transition: .2s;
+            }
+            &:hover, &:focus {
+              background-color: $primaryColor;
+              color: $white;
+              &::before {
+                filter: brightness(5);
+              }
+            }          
+          }
+
+          &:nth-child(1)>a::before{background-image: url(../images/icon_edit.svg);}
+          &:nth-child(2)>a::before{background-image: url(../images/icon_clock.svg);}
+          &:nth-child(3)>a::before{background-image: url(../images/icon_doc.svg);}
+
+        }
+
+        // focus 效果（暫時看hover 效果，記得刪除）
+        &:has(a:focus) {
+          opacity: 1; margin-top: -14px;
+        }
+
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    nav{
+      &>ul{
+        margin: 0 4%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 4%;
+        
+        &>li {
+          flex: 0 0 48%;
+          margin-bottom: 3.68vw;
+          &>a{
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+
+    nav{
+      max-width: 1170px; margin: 0 auto;
+      &>ul{
+        margin: 60px 3% 0;
+        gap: 2.4%;
+        &>li{
+          flex-basis: 23.2%;
+          margin-bottom: 90px;
+        }
+      }
+    }
+  }
+}

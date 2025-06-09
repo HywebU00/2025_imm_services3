@@ -1,0 +1,275 @@
+// ---------------------------------------------------------------- //
+.form {
+  @extend %primSection; // 大圓角，有陰影的主要區塊
+  padding-left: 5%; padding-right: 5%;
+  .formLayout { width: 100%; margin: 0 auto;}
+
+  h3{
+    border-bottom: 2px solid $grayLight;
+    padding-bottom: 40px;
+  }
+
+  .formExtend {
+    border: none; padding: 0; margin: 50px 0;
+    .title {
+      display: block; width: 100%;
+      padding: 14px 16px 12px; margin: 0;
+      line-height: 1.3; text-align: center;
+      background-color: $primaryColor;
+      color: $white;
+    }
+    
+    table.formLayout{
+      width: 90%;
+      background-color: $grayPale;
+      &::before, &::after { content: ''; display: block; height: 44px;}
+      td:nth-child(even):last-child { padding-right: 8%;}
+    }
+    .note, .aloneInput, .aloneCheck { width: 90%; margin: 32px auto;}
+    .aloneCheck {display: block;}
+  }
+
+
+}
+// ---------------------------------------------------------------- //
+
+
+// 表單排版表格
+// ---------------------------------------------------------------- //
+table.formLayout {
+  width: 100%; margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  tr {
+    border-bottom: 1px dashed #ddd;
+    &:last-child {border-bottom: none;}
+  }
+  th, td {
+    padding:16px 8px;
+    vertical-align: top;
+  }
+  
+  th, td:nth-child(odd) {
+    color: $fontColor;
+    text-align: right;
+    width: 15%;
+    padding-left: 20px; padding-top: calc(.9em + 16px);
+  }
+  td:nth-child(even) {
+    width: 35%;
+    text-align: left;
+
+    &[colspan="3"] {width: auto;}
+    &>input:only-child{
+      &[type="text"],
+      &[type="email"],
+      &[type="search"],
+      &[type="tel"],
+      &[type="url"],
+      &[type="password"],
+      &[type="date"] {
+        width: 100%;
+      }
+    }
+    &>select:only-child {
+      width: 100%;
+    }
+
+  }
+  
+  
+
+}
+// ---------------------------------------------------------------- //
+
+
+// 詳細地址
+// ---------------------------------------------------------------- //
+.addressSet {
+
+  .roughly{
+    display: flex; flex-wrap: nowrap;
+    gap: 0 24px;
+    &>label{
+      flex: 1 1 42%;
+      white-space: nowrap;
+      display: flex; align-items: center;
+      select{
+        flex: 1 1 auto;
+        margin-left: 8px;
+      }
+    }
+    &>input{
+      flex: 0 1 15%; width: auto; min-width: 5em;
+    }
+  }
+
+  .details{
+    display: flex; flex-wrap: wrap;
+    gap:10px 24px;
+    margin: 10px 0;
+    &>label{
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+    input{
+      width: 6em; margin-right: 5px;
+    }
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+.optionPool{
+  display: flex; flex-wrap: wrap;
+  gap: 5px 16px;
+  &>label{
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: .6em 12px .6em 8px;
+    border-radius: $radius1;
+    cursor: pointer;
+    input[type="radio"], input[type="checkbox"]{
+      margin-right: 8px;
+    }
+    &:hover{
+      box-shadow: $grayLight 0 0 0 1px;
+    }
+    &:has(input:checked){
+      box-shadow: $grayDark 0 0 0 1px;
+      color: $primaryColor;
+    }
+  }
+}
+
+
+// 表單中的 提示、警告、錯誤訊息；說明文字
+// ---------------------------------------------------------------- //
+.msg{
+  --color-hint: #00529B;
+  --color-warning: #C23E00;
+  --color-error: #C40000;
+  --bgc-hint: #CFE5FC;
+  --bgc-warning: #FFEFCF;
+  --bgc-error: #FDD7DE;
+
+  display: none; position: relative;
+  padding:10px 38px 9px 40px; margin: 5px 0;
+  border-radius: $radius;
+  font-size: .83em; line-height: 1.3;
+  &::before{
+    content: ''; position: absolute; left: 10px; top: 7px;
+    width: 24px; height: 24px; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+  }
+
+  &.hint{
+    color: var(--color-hint);
+    background-color:var(--bgc-hint);
+    &::before{  
+      background-image:url(../images/icon_msg_hint.svg);
+    }
+  }
+  &.warning{ 
+    color: var(--color-warning);
+    background-color:var(--bgc-warning);
+    &::before{
+      background-image:url(../images/icon_msg_warning.svg);
+    }
+  }
+  &.error{
+    color: var(--color-error);
+    background-color:var(--bgc-error);
+    &::before{
+      background-image:url(../images/icon_msg_error.svg);
+    }
+  }
+
+  button.closeThis{
+    --width:24px;
+    --bar-length:12px;
+    --bar-thick:2px;
+    background-color: transparent;
+    position: absolute; right: 5px; top: 7px;
+    border-radius: 50%;
+    &::before, &::after { background-color: $grayDark}
+    &:hover, &:focus { 
+      background-color: $grayDark;
+      &::before, &::after { background-color: $white;}
+    }
+  }
+}
+
+// ---------------------------------------------------------------- //
+
+.note{
+  line-height: 1.6;
+  color: $hilight;
+}
+.aloneInput {
+  line-height: 1.6;
+  .optionPool{ display: inline-block; margin-left: 16px;}
+}
+
+.aloneCheck {
+  line-height: 1.6;
+}
+
+// 跳出小日曆，選日期
+// ---------------------------------------------------------------- //
+.datePicker {
+  position: relative; width: 50%; min-width: 16em; 
+  input[type="text"], input[type="date"] {
+    width: 100%; 
+    padding-right: 3em;
+  }
+  button.date{
+    position: absolute; top: 4px; right: 0; z-index: 9;
+    width: calc(2.7em - 8px);  height: calc(2.7em - 8px);
+    border-radius: 50%; border: none;
+    background-color: $grayPale;
+    transition: .15s;
+    &::before {
+      content: ''; display: block; width: 18px; height: 18px;
+      margin: auto;
+      background: url(../images/icon_date.svg) no-repeat center center;
+      background-size: contain;
+      transition: .15s;
+    }
+    &:hover, &:focus {
+      background-color: $grayDark;
+      &::before {filter: brightness(20);}
+      &:focus {
+        box-shadow: $white 0 0 0 1px inset, $grayDark 0 0 0 2px;
+      }
+    }
+  }
+}
+// ---------------------------------------------------------------- //
+
+// 英文姓、名欄
+// ---------------------------------------------------------------- //
+.fullNameSet{
+  display: flex; justify-content: space-between; gap: 24px;
+  &>label {
+    flex: 1 1 48%;
+    input { margin-left: 12px; width: calc(100% - 1em - 12px);}
+  
+  }
+}
+// ---------------------------------------------------------------- //
+
+// 系統已自動儲存當前進度
+// ---------------------------------------------------------------- //
+.savingMsg {
+  position: fixed; z-index: 88;
+  left: 50%; bottom: 50px; translate: -50% 0;
+  padding: 1em 1.5em;
+  font-size: .83em; line-height: 1;
+  border-radius: 2em;
+  background-color: $grayPale; color: $fontColorLight;
+  box-shadow: $shadow1 0 0 32px;
+}
+// ---------------------------------------------------------------- //

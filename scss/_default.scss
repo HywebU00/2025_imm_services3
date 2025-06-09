@@ -1,0 +1,57 @@
+html{
+  scroll-behavior: smooth; // 平滑滾動
+  overflow-y: scroll; // 總是顯示垂直滾動條
+}
+body{
+  margin: 0; padding: 0;
+  font-size: 1.125em; // 18px 
+  font-family: Arial, Helvetica, "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  background-color: $bodyBg;
+  color: $fontColor;
+  
+  &.noScroll{ overflow: hidden; overflow-y:hidden; }
+  *, *::before, *::after {box-sizing: border-box;}
+}
+
+.main{
+  margin: 0 auto; padding:1px 0 40px ;
+  background-color: #f3f4f9;
+  background-image: 
+    radial-gradient( at 100% 0%,  rgb(203 213 247) 0%, rgb(203 213 247 / 0) 1000px),
+    radial-gradient( at 10% 95%,  rgb(179 195 246) 0%, rgb(199 201 246 / 1) 600px, rgb(199 201 246 / 0) 96vw);
+
+  &>h2 {
+    @extend %primSecWidth;
+    position: relative;
+    font-size: clamp(1.6em, 6.4vw, 2.2em);
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 64px auto 48px;
+    padding: 0 0 40px;
+    &::after {
+      content: ''; 
+      position: absolute; left: calc(50% - 60px); bottom: 20px;
+      width: 120px; height: 5px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #2A5AEE 0%, #492EBD 100%);
+    }
+
+    &+p.note{margin-bottom: 40px;}
+  }
+
+  &>p.note {
+    @extend %primSecWidth; margin: 0 auto;
+    font-size: 1.1em; line-height: 1; text-align: center;
+    color: $secondaryColor30;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    &>h2{ font-size: 2.2em;}
+  }
+
+}
+
+a{
+  color: $secondaryColor30; text-decoration: underline;
+  outline: none;
+}

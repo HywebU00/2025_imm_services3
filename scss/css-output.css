@@ -1,0 +1,52 @@
+:root {
+  /* ====== 1.REF TOKENS ======= */
+  --ref-color-neutral-100: #ffffff;
+  --ref-color-neutral-80: #f8f8f8;
+  --ref-color-neutral-70: #f1f1f1;
+  --ref-color-neutral-60: #dee0e3;
+  --ref-color-neutral-50: #c1c3c5;
+  --ref-color-neutral-40: #97a3b6;
+  --ref-color-neutral-30: #69707d;
+  --ref-color-neutral-20: #555555;
+  --ref-color-neutral-10: #333333;
+  --ref-color-neutral-0: #111111;
+  --ref-color-primary-50: #3847a3;
+  --ref-color-secondary-50: #2a5aee;
+  --ref-color-secondary-30: #0042a2;
+  --ref-color-red-50: #c40000;
+  --ref-color-light-50: #e1e7f7;
+  --ref-color-light-70: #f3f4f9;
+
+  /* ======= 2. SYS COLOR TOKENS ======= */
+  --sys-color-header-bg: var(--ref-color-light-50);
+  --sys-color-nav-surface: var(--ref-color-neutral-100);
+  --sys-color-link-acolor: var(--ref-color-primary-50);
+  --sys-color-notice-surface: var(--ref-color-red-50);
+  /* text */
+  --sys-color-text-darkness: var(--ref-color-neutral-0);
+  --sys-color-text-base: var(--ref-color-neutral-10);
+  --sys-color-text-lightness: var(--ref-color-neutral-20);
+  /* form */
+  --sys-color-form-focus: var(--ref-color-primary-50);
+  --sys-color-form-error: var(--ref-color-red-50);
+  --sys-color-form-disable: var(--ref-color-neutral-60);
+  /* table */
+  --sys-color-table-th-bg: var(--ref-color-primary-50);
+  --sys-color-table-border: var(--ref-color-neutral-60);
+  /* btn-primary */
+  --sys-color-btn-primary-bg_gradient-a: var(--ref-color-primary-50);
+  --sys-color-btn-primary-bg_gradient-b: var(--ref-color-secondary-50);
+  --sys-color-btn-primary-surface: var(--ref-color-primary-50);
+  --sys-color-btn-primary-outline: var(--ref-color-primary-50);
+  --sys-color-btn-primary-border: var(--ref-color-secondary-50);
+  /* btn-secondary */
+  --sys-color-btn-secondary-surface: var(--ref-color-secondary-50);
+  --sys-color-btn-secondary-border: var(--ref-color-secondary-50);
+  /* btn-normal */
+  --sys-color-btn-normal-outline: var(--ref-color-neutral-40);
+  --sys-color-btn-normal-surface: var(--ref-color-neutral-60);
+  --sys-color-btn-normal-border: var(--ref-color-neutral-50);
+  /* btn-disable */
+  --sys-color-btn-disable-surface: var(--ref-color-neutral-60);
+  --sys-color-btn-disable-outline: var(--ref-color-neutral-40);
+}

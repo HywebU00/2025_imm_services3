@@ -1,0 +1,104 @@
+// RWD 斷點 
+// ---------------------------------------------------------------- //
+$wwSlim: 400px;
+$wwMedium: 700px;
+$wwNormal: 1000px;
+$wwMaximum: 1440px;
+// ---------------------------------------------------------------- //
+
+
+// 長度常數
+// ---------------------------------------------------------------- //
+$sideBarWidth: 300px;            // 窄版側欄選單
+$mobileWidth: 95%;              // 窄螢幕寬度 moduals width in mobile
+$normalWidth: 95%;              // 寬螢幕寬度
+$mobileWidthVW: 95vw;           // 窄螢幕寬度 moduals width in mobile
+$normalWidthVW: 95vw;           // 寬螢幕寬度
+$maximumWidth: $wwMaximum*.95;  // 內容區最大寬度
+
+// 文件邊界寬度
+$marginDoc: 2.5%;
+$marginDocMob: 2.5%;
+$marginDocMax: calc(50% - $wwMaximum*.425);
+
+$radius: 4px; // 圓角半徑
+$radius1: 8px; // 圓角半徑
+$radius2: 16px; // 圓角半徑
+$radiusBig: 24px; // 圓角半徑
+// ---------------------------------------------------------------- //
+
+
+
+// 顏色變數
+// ---------------------------------------------------------------- //
+$primaryColor:#3847a3;
+$secondaryColor: #2a5aee;
+$secondaryColor30: #0042a2;
+$assistant1: #efbd33;
+$hilight : #c40000;
+$bodyBg: #E1E7F7;
+
+
+$fontColor: #333;
+$fontColorLight: #555;
+$fontColorPale: #888;
+$fontColorDark: #111;
+$linkColor: #3368E3;
+
+
+$borderColor: #c6c3c0;
+$borderColorLight: #e3dfdf;
+$borderColorDark:#252525;
+$shadow1:rgba(34 34 34 / .2);
+$shadow2:rgba(34 34 34 / .5);
+
+$white: #fff;
+$black: #000;
+$grayPale: #f6f7fb;
+$grayLight: #dee0e3;
+$gray: #c1c3c5;
+$grayDark: #69707d;
+
+
+%gradient1 {
+  background: linear-gradient(180deg, #2A5AEE 0%, #3847A3 100%);
+}
+%gradient2 {
+  background: linear-gradient(270deg, #3847A3 20%, #2A5AEE 100%);
+}
+%gradient3{
+  background: linear-gradient(354deg, #fff 0%, #dee0e3 90%);
+}
+
+
+
+// 主要區塊寬度、樣式
+// ---------------------------------------------------------------- //
+%primSecWidth {
+  width: $mobileWidth; 
+  margin: 24px auto;
+  @media screen and (min-width: $wwNormal){
+    width: $normalWidth; 
+  }
+  @media screen and (min-width: $wwMaximum){
+    width: $maximumWidth;
+  }
+}
+
+// 大圓角，有陰影的主要區塊
+%primSection {
+  @extend %primSecWidth;
+  padding: 72px 5% 32px; margin-bottom: 100px;
+  border-radius: $radiusBig;
+  position: relative; z-index: 99;
+  background-color: $white; color: $fontColor;
+  box-shadow: 0 4px 16px -4px rgb(17 52 115 / .25);
+  
+  &>h3:first-child{
+    margin: 0 auto 40px; text-align: center;
+    font-size: 1.33em;
+    color: $fontColorDark;
+  }
+
+}
+// ---------------------------------------------------------------- //

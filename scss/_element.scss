@@ -1,0 +1,60 @@
+// 查詢區開關 button
+// --------------------------------------------------------------- //
+.searchCtrl{
+
+}
+// --------------------------------------------------------------- //
+
+
+// 必填符號 *
+// --------------------------------------------------------------- //
+abbr.required{
+  display: inline-block; 
+  position: relative;
+  color: $hilight;  text-decoration: none;
+  
+  margin:0 3px auto auto; padding-right: .8em;
+  overflow: hidden; 
+  text-indent:  -5em; line-height: 1;
+
+  &::before {
+    content: '*'; font-size: 1.2em;
+    position: absolute; top: 0; right: 0;
+    text-indent:0;
+  }
+}
+// --------------------------------------------------------------- //
+
+
+// 關閉 「X」
+// --------------------------------------------------------------- //
+button.closeThis{
+  --width:48px;
+  --bar-length:24px;
+  --bar-thick:2px;
+
+  position: relative;
+  height: var(--width); width:  var(--width); padding: 0; margin: 0;
+  text-indent: -20em; overflow: hidden;
+  border-radius: 0; border: none;
+
+  &::before, &::after{
+    content: ''; 
+    position: absolute; 
+    left: calc( (var(--width) - var(--bar-length))/2 );
+    top:  calc( (var(--width) - var(--bar-thick))/2 );
+    width: var(--bar-length); height: var(--bar-thick); 
+    background-color: $white;
+  }
+  &::before{transform: rotate(45deg);}
+  &::after{transform: rotate(-45deg);}
+
+  &:hover, &:focus { 
+    background-color: $primaryColor;
+    &::before, &::after{ background-color: $white;}
+  }
+  &:focus{
+    box-shadow: #fff 0 0 0 1px, $primaryColor 0 0 0 3px;
+  }
+}
+// ---------------------------------------------------------------- //
