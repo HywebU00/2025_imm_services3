@@ -24,30 +24,13 @@ table.formLayout {
     text-align: left;
 
     &[colspan="3"] {width: auto;}
-    // &>input:only-child{
-    //   &[type="text"],
-    //   &[type="email"],
-    //   &[type="search"],
-    //   &[type="tel"],
-    //   &[type="url"],
-    //   &[type="password"],
-    //   &[type="date"] {
-    //     width: 100%;
-    //   }
-    // }
-    // &>select:only-child {
-    //   width: 100%;
-    // }
-
   }
 
   @media screen and (max-width: calc($wwNormal - 1px)){
-    outline: 1px dashed #f001;
-    outline-offset: -1px;
     tr{
-      // outline: 1px dashed #f002;
       display: block;
       border-bottom:none;
+      &:last-child td:nth-child(even) {border-bottom: none;}
     }
     th, td{
       display: block; padding: 0;
@@ -73,6 +56,7 @@ table.formLayout {
 
 
 // 延伸填寫的表單
+// ---------------------------------------------------------------- //
 .formExtend {
   border: none; padding: 0; margin: 50px 0;
 
@@ -109,3 +93,4 @@ table.formLayout {
     .aloneCheck {width: auto;}
   }
 }
+// ---------------------------------------------------------------- //
