@@ -72,13 +72,14 @@
 
 
 
-
+// 表單下方按鈕群
 // ---------------------------------------------------------------- //
 .btnDiv {
-  display: flex; justify-content: center; gap: 40px;
-  padding: 24px; margin: 40px auto;
+  display: flex; justify-content: center; gap: 16px;
+  flex-flow: row wrap;
+  padding: 24px 0; margin: 40px auto;
   &>*{
-    flex: 1 1 auto; max-width: 270px;
+    flex: 1 1 auto;
   }
   // .button{display: inline-block;}
   .button>a { display: block; text-decoration: none; color: $fontColorLight;}
@@ -87,8 +88,11 @@
   input[type="button"], input[type="submit"], input[type="reset"],
   .button>a {
     padding: 0 1em;
-    height: 3.25em; line-height: 3.25;
-    font-size: 1.11em; font-weight: bold; text-align: center; 
+    height: 3.25em; margin: 0;
+    line-height: 3.25;
+    // font-size: 1.11em; 
+      font-size: 1em;
+    font-weight: bold; text-align: center; 
     border: none; outline: none;
     border-radius: $radius1;
 
@@ -154,14 +158,29 @@
 
   .hintContent{
     display: none;  
-    position: absolute; left: 50%; top: auto;
-    width: 290px; padding:22px 16px 16px;
-    margin-top: 3px; margin-left: -2em;
+    position: absolute; left: 6%; top: auto;
+    width:88%; padding:22px 16px 16px;
+    margin-top: 3px; 
     font-size: 1rem; line-height: 1.8;
     color: $fontColor;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgb(255 255 255 / 0.92);
     box-shadow: 0 15px 55px -15px $shadow2;
-    
+  }
+
+  @media screen and (min-width: $wwMedium){
+    gap: 40px;
+    &>*{
+      max-width: 270px;
+    }
+    button, 
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    .button>a { font-size: 1.11em;}
+
+    .hintContent{
+      width: 290px; left: 50%; margin-left: -2em;
+    }
   }
 
 }

@@ -42,7 +42,7 @@ table.formLayout {
   }
 
   @media screen and (max-width: calc($wwNormal - 1px)){
-    outline: 1px solid #f008;
+    outline: 1px dashed #f001;
     outline-offset: -1px;
     tr{
       // outline: 1px dashed #f002;
@@ -53,7 +53,7 @@ table.formLayout {
       display: block; padding: 0;
     }
     th, td:nth-child(odd) {
-       width: auto;
+      width: auto;
       text-align: left; padding:24px 0 4px;
     }
     td:nth-child(even){
@@ -61,11 +61,51 @@ table.formLayout {
       padding: 0 0 24px;
       border-bottom: 1px dashed $grayLight;
 
-      .datePicker{
-        width: 100%;
-      }
-
+      .datePicker{ width: 100%; }
     }
+  }
+
+  @media screen and ( max-width: calc($wwMedium - 1px) ) {
   }
 }
 // ---------------------------------------------------------------- //
+
+
+
+// 延伸填寫的表單
+.formExtend {
+  border: none; padding: 0; margin: 50px 0;
+
+  table.formLayout,
+  .note,
+  .aloneInput,
+  .aloneCheck {width: 90%;}
+  
+  table.formLayout{
+    background-color: $grayPale;
+    &::before, &::after { content: ''; display: block; height: 44px;}
+    td:nth-child(even):last-child { padding-right: 8%;}
+    th, 
+    td:nth-child(odd){padding-left: 8px;
+      br{display: none;}
+    }
+  }
+
+  .note, .aloneInput, .aloneCheck { margin: 32px auto;}
+  .aloneCheck {display: block;}
+
+  @media screen and ( max-width: calc($wwNormal - 1px) ) {
+    table.formLayout{
+     td:nth-child(even):last-child { padding-left: 16px; padding-right: 16px;}
+     th, td:nth-child(odd){padding-left: 16px;}
+   }
+  }
+
+  @media screen and ( max-width: calc($wwMedium - 1px) ) {
+    table.formLayout{width: 100%;}
+
+    .note,
+    .aloneInput,
+    .aloneCheck {width: auto;}
+  }
+}

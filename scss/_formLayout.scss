@@ -1,84 +1,34 @@
+// 主要表單樣式
 // ---------------------------------------------------------------- //
 .form {
   @extend %primSection; // 大圓角，有陰影的主要區塊
   padding-left: 5%; padding-right: 5%;
+
   .formLayout { width: 100%; margin: 0 auto;}
 
+  // 主標題字
   h3{
     border-bottom: 2px solid $grayLight;
     padding-bottom: 40px;
-  } 
-}
-
-.title {
-  display: block; width: 100%;
-  padding: 14px 16px 12px; margin: 0;
-  line-height: 1.3; text-align: center;
-  background-color: $primaryColor;
-  color: $white;
-}
-
-.formExtend {
-  border: none; padding: 0; margin: 50px 0;
-  
-  table.formLayout{
-    width: 90%;
-    background-color: $grayPale;
-    &::before, &::after { content: ''; display: block; height: 44px;}
-    td:nth-child(even):last-child { padding-right: 8%;}
   }
-  .note, .aloneInput, .aloneCheck { width: 90%; margin: 32px auto;}
-  .aloneCheck {display: block;}
+
+  // 藍底白字
+  .title {
+    display: block; width: 100%;
+    padding: 14px 16px 12px; margin: 0;
+    line-height: 1.3; text-align: center;
+    background-color: $primaryColor;
+    color: $white;
+  }
 }
-
 // ---------------------------------------------------------------- //
 
 
-// 表單排版表格
+
+
 // ---------------------------------------------------------------- //
-// table.formLayout {
-//   width: 100%; margin: 0 auto;
-//   border-collapse: collapse;
-//   border-spacing: 0;
-//   tr {
-//     border-bottom: 1px dashed #ddd;
-//     &:last-child {border-bottom: none;}
-//   }
-//   th, td {
-//     padding:16px 8px;
-//     vertical-align: top;
-//   }
-  
-//   th, td:nth-child(odd) {
-//     color: $fontColor;
-//     text-align: right;
-//     width: 15%;
-//     padding-left: 20px; padding-top: calc(.9em + 16px);
-//   }
-//   td:nth-child(even) {
-//     width: 35%;
-//     text-align: left;
-
-//     &[colspan="3"] {width: auto;}
-//     &>input:only-child{
-//       &[type="text"],
-//       &[type="email"],
-//       &[type="search"],
-//       &[type="tel"],
-//       &[type="url"],
-//       &[type="password"],
-//       &[type="date"] {
-//         width: 100%;
-//       }
-//     }
-//     &>select:only-child {
-//       width: 100%;
-//     }
-
-//   }
-// }
+// ----------------------- 表單用模組 ----------------------------- //
 // ---------------------------------------------------------------- //
-
 
 // 詳細地址
 // ---------------------------------------------------------------- //
@@ -127,17 +77,12 @@
           margin-left: 8px;
         }
       }
-      &>input {
-        // flex: 0 1 15%;
-        // width: auto;
-      }
     }
 
     .details{
       &>label{
         flex: 0 0 auto;
       }
-      // input{ width: 6em;}
     }
 
   }
@@ -145,6 +90,57 @@
 // ---------------------------------------------------------------- //
 
 
+
+// 英文姓、名欄
+// ---------------------------------------------------------------- //
+.fullNameSet{
+  display: flex; justify-content: space-between; gap: 24px;
+  &>label {
+    flex: 1 1 48%;
+    input { margin-left: 12px; width: calc(100% - 1em - 12px);}
+  
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+// 選日期套件（跳出小日曆）
+// ---------------------------------------------------------------- //
+.datePicker {
+  position: relative; width: 50%; min-width: 16em; 
+  input[type="text"], input[type="date"] {
+    width: 100%; 
+    padding-right: 3em;
+  }
+  button.date{
+    position: absolute; top: 4px; right: 0; z-index: 9;
+    width: calc(2.7em - 8px);  height: calc(2.7em - 8px);
+    border-radius: 50%; border: none;
+    background-color: $grayPale;
+    transition: .15s;
+    &::before {
+      content: ''; display: block; width: 18px; height: 18px;
+      margin: auto;
+      background: url(../images/icon_date.svg) no-repeat center center;
+      background-size: contain;
+      transition: .15s;
+    }
+    &:hover, &:focus {
+      background-color: $grayDark;
+      &::before {filter: brightness(20);}
+      &:focus {
+        box-shadow: $white 0 0 0 1px inset, $grayDark 0 0 0 2px;
+      }
+    }
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+// checkbox and radio （單、複選項）
+// ---------------------------------------------------------------- //
 .optionPool{
   display: flex; flex-wrap: wrap;
   gap: 5px 16px;
@@ -166,9 +162,10 @@
     }
   }
 }
+// ---------------------------------------------------------------- //
 
 
-// 表單中的 提示、警告、錯誤訊息；說明文字
+// 表單輸入錯誤的 提示、警告、錯誤訊息；說明文字
 // ---------------------------------------------------------------- //
 .msg{
   --color-info: #00529B;
@@ -226,22 +223,15 @@
     }
   }
 }
-
 // ---------------------------------------------------------------- //
 
+
+
+// 其他提示或說明文字
+// ---------------------------------------------------------------- //
 .note, .hint{
   line-height: 1.6;
-  // color: $hilight;
 }
-.aloneInput {
-  line-height: 1.6;
-  .optionPool{ display: inline-block; margin-left: 16px;}
-}
-
-.aloneCheck {
-  line-height: 1.6;
-}
-
 .hint {
   color: $fontColorLight; margin: 4px;
   font-size: .89em;
@@ -249,52 +239,27 @@
 .note {
   &.important { color: $hilight;}
 }
-
-// 跳出小日曆，選日期
 // ---------------------------------------------------------------- //
-.datePicker {
-  position: relative; width: 50%; min-width: 16em; 
-  input[type="text"], input[type="date"] {
-    width: 100%; 
-    padding-right: 3em;
-  }
-  button.date{
-    position: absolute; top: 4px; right: 0; z-index: 9;
-    width: calc(2.7em - 8px);  height: calc(2.7em - 8px);
-    border-radius: 50%; border: none;
-    background-color: $grayPale;
-    transition: .15s;
-    &::before {
-      content: ''; display: block; width: 18px; height: 18px;
-      margin: auto;
-      background: url(../images/icon_date.svg) no-repeat center center;
-      background-size: contain;
-      transition: .15s;
-    }
-    &:hover, &:focus {
-      background-color: $grayDark;
-      &::before {filter: brightness(20);}
-      &:focus {
-        box-shadow: $white 0 0 0 1px inset, $grayDark 0 0 0 2px;
-      }
-    }
-  }
+
+
+
+// ---------------------------------------------------------------- //
+// 一段文字後面跟著 是／否 選項
+.aloneInput {
+  line-height: 1.6;
+  .optionPool{ display: inline-block; margin-left: 16px;}
+}
+
+// 前面有一個 checkbox 或 radio 的一段文字
+.aloneCheck {
+  line-height: 1.6;
 }
 // ---------------------------------------------------------------- //
 
-// 英文姓、名欄
-// ---------------------------------------------------------------- //
-.fullNameSet{
-  display: flex; justify-content: space-between; gap: 24px;
-  &>label {
-    flex: 1 1 48%;
-    input { margin-left: 12px; width: calc(100% - 1em - 12px);}
-  
-  }
-}
-// ---------------------------------------------------------------- //
 
-// 系統已自動儲存當前進度
+
+
+// 提示訊息：「系統已自動儲存當前進度」
 // ---------------------------------------------------------------- //
 .savingMsg {
   display: inline-block;
@@ -303,6 +268,5 @@
   font-size: .83em; line-height: 1;
   border-radius: 2em;
   background-color: $grayLight; color: $fontColorLight;
-  // box-shadow: $shadow1 0 0 32px;
 }
 // ---------------------------------------------------------------- //
