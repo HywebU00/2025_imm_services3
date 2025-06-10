@@ -1,0 +1,142 @@
+
+.preview,
+.upload {
+  @extend %primSection; // 大圓角，有陰影的主要區塊
+  padding-left: 5%; padding-right: 5%;
+
+  h3{
+    border-bottom: 2px solid $grayLight;
+    padding-bottom: 40px;
+  }
+
+  .form{
+    width: 100%; margin: 0; padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  @media screen and ( max-width: calc($wwMedium - 1px) ) {
+    padding-left: 3%; padding-right: 3%;
+  }
+
+}
+
+
+
+// 預覽送出
+// ---------------------------------------------------------------- //
+.preview {
+  h4 {
+    position: relative;
+    padding: 2px 0 0 20px; margin:44px 0 20px;
+    font-size: 1.11em; line-height: 1.1;
+    color: $fontColorDark;
+    &::before {
+      content: ''; position: absolute; left: 0;top: 0;
+      width: 8px; height: 24px;
+      background-color: $primaryColor;
+    }
+  }
+
+
+
+  @media screen and ( max-width: calc($wwNormal - 1px) ) {
+    
+  }
+  
+  // @media screen and ( max-width: calc($wwMedium - 1px) ) {
+  //   padding-left: 3%; padding-right: 3%;
+  // }
+
+
+}
+// ---------------------------------------------------------------- //
+
+
+
+
+
+
+.upload {
+  h4 { font-size: 1.2em;}
+
+  // 照片上傳
+  .photoHere {
+    padding: 32px 5%;
+    background-color: $grayPale;
+
+    // 說明文字
+    ul{
+      line-height: 2;
+      margin: 32px 0;
+      em{
+        font-style: normal;
+        color: $hilight;
+      }
+    }
+ 
+    // 證件照自動裁切
+    .photoCrop {
+      margin: 32px auto; padding: 0 0 3px;
+      max-width: 240px;
+      text-align: center;
+  
+      .image{
+        margin: 0 auto 16px;
+        border: 3px solid  $borderColorLight;
+        background: $borderColorLight url(../images/photo_bg.png) no-repeat center top;
+        background-size: cover;
+        aspect-ratio: .78;
+        img{display: block; width: 100%; }
+      }
+
+      button { 
+        width: calc(100% - 6px); height: 3em; margin:0;
+       
+        @extend %gradient3;
+        font-weight: bold;
+        box-shadow:$grayDark 0 0 0 0 inset, $white 0 0 0 0, 1px 3px 6px 0 rgb(0 0 0 / 0.15);
+        color: $fontColorLight;
+        border: none;
+        &::before {
+          content: ''; display: inline-block; 
+          width: 20px; height: 20px;
+          vertical-align: middle; margin-right: 8px;
+          background: url(../images/icon_crop.svg) no-repeat 0 0;
+          background-size: 100% auto;
+        }
+  
+        &[disabled]{
+          background: $grayLight;
+          color: $fontColorPale;
+          &::before{
+            filter: brightness(1.5);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+
+    .photoHere{
+
+      display: flex; flex-flow:row nowrap;
+      gap: 5%;
+      h4{margin-top: 8px;}
+
+      
+      .flexColumn{
+        flex: 1 0 60%;
+        display: flex; flex-flow: column nowrap;
+        ul{margin-top: 0;}
+        .fileButton { max-width: 10em; margin-top: auto;}
+      }
+
+      .photoCrop{
+        margin-top: 0; margin-bottom: 0;
+        flex: 0 0 30%;
+      }
+    }
+  }
+}

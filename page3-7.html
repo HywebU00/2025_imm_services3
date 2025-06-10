@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陸配依親居留＿線上申請</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="siteHeader">
+    <h1>
+      <img src="publicData/h1.png" alt="內政部移民署 線上服務">
+    </h1>
+    <div class="flexBox">
+      <section class="search">
+        <form action="">
+          <input type="text" placeholder="搜尋關鍵字">
+          <button type="button">查詢</button>
+        </form>
+      </section>
+      <div class="whoIs">
+        <img src="publicData/avatar.png" alt="">
+        <a href="#">陳澄</a>
+      </div>
+      <div class="yourMessage">
+        <a aria-label="你有2則訊息" href="#"></a>
+        <span class="count">2</span>
+      </div>
+      <button class="langSwitch" type="button">EN</button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <h2>陸配依親居留線上送件服務</h2>
+
+    <section class="steps">
+      <ol>
+        <li><i>1</i><span>申請人資料</span></li>
+        <li><i>2</i><span>臺灣配偶</span></li>
+        <li><i>3</i><span>親屬及子女</span></li>
+        <li class="now"><i>4</i><span>文件上傳</span></li>
+        <li><i>5</i><span>預覽送出</span></li>
+      </ol>
+    </section>
+
+    <section class="upload">
+      <h3>文件上傳</h3>
+      <p class="note"><abbr class="required">必填欄位</abbr> 為必須上傳的資料欄位</p>
+
+      <section class="photoHere">
+        <div class="flexColumn">
+          <h4><abbr class="required">必填欄位</abbr> 照片上傳</h4>
+          <ul>
+            <li><em>請勿以手機拍攝及上傳。</em></li>
+            <li>須為最近六個月內所攝彩色大頭照、正面、脫帽、五官清晰、白色背景之相片。</li>
+            <li>臉部占據整張相片面積約70~80%。</li>
+            <li>相片的「寬*高」請設定於「413像素*531像素」(+10%)範圍內。</li>
+          </ul>
+  
+          <label class="fileButton">選擇檔案
+            <input id="photoFile" type="file">
+          </label>
+
+        </div>
+
+        <div class="photoCrop">
+          <div class="image">
+            <img src="publicData/IDphoto_2.jpg" alt="您上傳的證件照">
+          </div>
+          <button type="button">證件照自動裁切</button>
+          <!-- 沒有圖檔時
+            <button disabled type="button">證件照自動裁切</button> 
+          -->
+        </div>
+      </section>
+
+      <div class="title">應檢附文件</div>
+      
+      <article class="rules">
+        <ul>
+          <li>檔案格式為JPG / JPEG / PNG / BMP / PDF，上傳的文件須清晰，身分證及護照上不能加上任何字句或圖樣，如：影印本或COPY等。</li>
+          <li>檔案請小於1024KB(即1MB)。</li>
+          <li>上傳文件如為中文及英文以外之文件，請再上傳中譯本。</li>
+          <li>應檢附文件請依原證件大小掃描後上傳。</li>
+          <li>如證件雙面均載有資料，正、反面均需掃描後上傳</li>
+        </ul>
+      </article>
+
+      <section class="form">
+        
+        <form action="">
+          
+          <h4><abbr class="required">必填欄位</abbr> 臺灣地區入出境許可證</h4>
+          <p>請透過下方上傳區遞交相關檔案，最多可上傳5個檔案</p>
+          <div class="uploadHere">
+            <p>拖曳檔案至此</p>
+            或
+            <input type="file" name="" id="" value="瀏覽電腦檔案">
+          </div>
+          <p class="notice">僅支援JPG, JPEG, PNG, BNP, PDF，每個檔案勿超過1MB</p>
+
+          <div class="uploadStatus"></div>
+
+          <p><abbr class="required">必填欄位</abbr> 刑事紀錄證明之公證書</p>
+          <p class="hint">請透過下方上傳區遞交相關檔案，最多可上傳5個檔案</p>
+
+
+          <h4><abbr class="required">必填欄位</abbr> 健康檢查合格證明</h4>
+          <p>請透過下方上傳區遞交相關檔案，最多可上傳5個檔案</p>
+          <h4><abbr class="required">必填欄位</abbr> 大陸地區證照、居民身分證</h4>
+          <p>請透過下方上傳區遞交相關檔案，最多可上傳5個檔案</p>
+          <h4><abbr class="required">必填欄位</abbr> 親屬關係證明(如結婚證書、具父母資料出生證明等)</h4>
+          <p>請透過下方上傳區遞交相關檔案，最多可上傳5個檔案</p>
+          <h4><abbr class="required">必填欄位</abbr> 委託書</h4>
+          <p>請透過下方上傳區遞交相關檔案，最多可上傳5個檔案</p>
+          <p>其他相關證明文件(若無要求則免附)</p>
+          <p>請透過下方上傳區遞交相關檔案，最多可上傳5個檔案</p>
+
+          <div class="savingMsg">系統已自動儲存當前進度</div>
+
+          <div class="btnDiv">
+            <div class="hasHiddenHint">
+              <button type="button"> 暫存草稿（結束編輯）</button>
+              <button type="button" class="hiddenHint">說明</button>
+              <div class="hintContent">點選暫存草稿，後續可至「暫存草稿匣」再繼續編輯，您已填寫的資料不會遺失，敬請放心使用</div>
+            </div>
+            <button type="button" class="submit">下一步：預覽送出</button>
+          </div>          
+        </form>
+
+    
+      </section>
+
+    </section>
+
+
+  </main>
+
+  <footer class="siteFooter">
+    <div class="contactInfo">
+      <p>常見問題：請見 <a href="#">內政部移民署【網路申辦服務】常見問題及解答</a> 或 <a href="#">移民署中文網-常見問題</a></p>
+      <p>負責單位：入出國事務組-停留科</p>
+      <p>聯絡電話：+886-2-23889393 分機1039</p>
+    </div>
+    <div class="base">
+      <ul>
+        <li><a href="#">隱私權保護服務及宣告</a></li>
+        <li><a href="#">安全防護與回復機制</a></li>
+        <li><a href="#">資訊安全宣告</a></li>
+      </ul>
+      <div>
+        <p>內政部移民署 版權所有 © NATIONAL IMMIGRATION AGENCY</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

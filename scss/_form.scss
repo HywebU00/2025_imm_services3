@@ -107,6 +107,34 @@ input[type="checkbox"]{
 
 
 
+// 選擇檔案
+// ---------------------------------------------------------------- //
+label.fileButton{
+  display: block;
+  font-size: 1em; font-weight: bold;
+  border-radius: $radius;
+  height: 3em; line-height: 3; text-align: center;
+  @extend %gradient2;
+  color: $white;
+  box-shadow:$white 0 0 0 0 inset, $secondaryColor 0 0 0 0, 1px 3px 6px 0 rgb(0 0 0 / 0.3);
+  cursor: pointer;
+
+  &::before {
+    content: ''; display: inline-block; vertical-align: middle;
+    width: 20px;height: 20px; margin-right: 8px;
+    background: url(../images/icon_folder.svg) no-repeat 0 0;
+    background-size: 100% auto;
+  }
+
+  input[type="file"] { 
+    font-size: 0; width: 0;
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+
 // ---------------------------------------------------------------- //
 // ---------------------------------------------------------------- //
 

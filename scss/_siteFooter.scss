@@ -1,40 +1,22 @@
 .siteFooter{
   position: relative;
   background: linear-gradient(120deg, #4250a8 30%, #2b367b 85%);
-  a{
-    position: relative;
-    text-decoration: none; 
-    color: $white;
-    &::after{
-      content: '';
-      position: absolute; left: 0; bottom: -2px;
-      width: 100%; height: 1px;
-      background-color: rgb(255 255 255 / .6);
-      transition: .2s;
-    }
-    &:hover {
-      &::after {
-        height: 2px; bottom: -3px;
-        background-color: $white;
-      }
-    }
-    &:focus {
-      outline: 2px solid $white;
-      outline-offset: 2px;
-      &::after {
-        background-color: transparent;}
-    }
-    
-  }
+  a{ color: $white;  }
   .contactInfo{
     padding: 66px 4% 60px; margin: 0 auto;width: fit-content;
-    line-height: 1.3;
+    line-height: 1.5;
     color: $white;
     a{
-      font-weight: bold;
+      font-weight: bold; text-decoration: underline;
+      &:hover{
+        outline: 1px solid rgb(255 255 255 / .6);
+        outline-offset: 2px;
+        text-decoration: none;
+      }
       &:focus{
         outline: 2px solid $white;
         outline-offset: 2px;
+        text-decoration: none;
       }
     }
     p{
@@ -44,18 +26,41 @@
   }
 
   .base{
-    font-size: .89em; text-align: left;
     padding:24px 32px;
+    font-size: .89em; text-align: center;
     background-color: #222b62; color: #fff;
+    line-height: 1.5;
 
     &>ul{
       list-style: none; margin: 0 auto 16px; padding: 0;
       line-height: 1.1;
       li{
         display: inline-block;
-        margin: 0 1em 0 0;
+        margin: 0 .5em 1em; padding-bottom: 0;
         &:last-child{ margin-right: 0; }
-        a{ display: block;}
+        a{
+          display: block; position: relative;
+          text-decoration: none; 
+          &::after{
+            content: '';
+            position: absolute; left: 0; bottom: -1px;
+            width: 100%; height: 1px;
+            background-color: rgb(255 255 255 / .6);
+            transition: .2s;
+          }
+          &:hover {
+            &::after {
+              height: 2px; bottom: -2px;
+              background-color: $white;
+            }
+          }
+          &:focus {
+            outline: 2px solid $white;
+            outline-offset: 2px;
+            &::after {
+              background-color: transparent;}
+          }
+        }        
       }
     }
     &>div{
@@ -70,11 +75,13 @@
         flex: 1 0 auto;
         margin-bottom: 0;
         text-align: right;
+        li{ margin-bottom: 0;}
       }
       &>div{
         flex: 1 0 auto; white-space: nowrap;
         padding-left: 25px; margin-left: 25px;
         border-left: 1px solid #fff;
+        text-align: left;
       }
     }
   }
