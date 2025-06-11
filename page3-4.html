@@ -38,8 +38,8 @@
 
     <section class="steps">
       <ol>
-        <li class="now"><i>1</i><span>申請人資料</span></li>
-        <li><i>2</i><span>臺灣配偶</span></li>
+        <li><i>1</i><span>申請人資料</span></li>
+        <li class="now"><i>2</i><span>臺灣配偶</span></li>
         <li><i>3</i><span>親屬及子女</span></li>
         <li><i>4</i><span>文件上傳</span></li>
         <li><i>5</i><span>預覽送出</span></li>
@@ -47,74 +47,35 @@
     </section>
 
     <section class="form">
-      <h3>申請人資料</h3>
+      <h3>臺灣配偶資料</h3>
       <p class="note"><abbr class="required">必填欄位</abbr>為必須填寫的資料欄位</p>
       <form action="">
         <table class="formLayout">
           <tr>
-            <td><abbr class="required">必填欄位</abbr> 大陸身分證</td>
-            <td><input class="fullWidth" type="text" readonly value="323234198001011368"></td>
-            <td><abbr class="required">必填欄位</abbr> 中文姓名</td>
-            <td><input class="fullWidth" type="text" value="林試范"></td>
-          </tr>
-          <tr>
-            <td>原名</td>
-            <td><input class="fullWidth" type="text" value="林花"></td>
-            <td>英文姓名</td>
-            <td>
-              <div class="fullNameSet">
-                <label>姓<input type="text" value="LIN"></label>
-                <label>名<input type="text" value="TEST"></label>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td><abbr class="required">必填欄位</abbr> 出生地</td>
-            <td>
-              <div class="dualSelect">
-                <select>
-                  <option value="">湖南</option>
-                  <option value="">...</option>
-                  <option value="">...</option>
-                </select>
-                <select>
-                  <option value="">長沙</option>
-                  <option value="">...</option>
-                  <option value="">...</option>
-                </select>
-              </div>
-               </td>
-            <td><abbr class="required">必填欄位</abbr> 出生日期</td>
-            <td>
-              <input class="fullWidth" type="text" value="1980/01/01" readonly>
-            </td>
+            <td><abbr class="required">必填欄位</abbr> 姓名</td>
+            <td><input class="fullWidth" type="text" value="陳澄"></td>
+            <td>身分證號</td>
+            <td><input class="fullWidth" type="text" value="U156139432"></td>
           </tr>
           <tr>
             <td><abbr class="required">必填欄位</abbr> 性別</td>
             <td>
               <div class="optionPool">
-                <label><input name="xxx" type="radio">男</label>
-                <label><input name="xxx" type="radio" checked>女</label>
-              </div>
+                <label><input name="yyyy" type="radio" checked>男</label>
+                <label><input name="yyyy" type="radio">女</label>
+              </div>              
             </td>
-            <td><abbr class="required">必填欄位</abbr> 最高學歷</td>
+            <td>出生日期</td>
             <td>
-              <select class="fullWidth">
-                <option value="">大學</option>
-                <option value="">...</option>
-                <option value="">...</option>
-              </select>
+              <div class="datePicker">
+                  <input id="date-of-birth" type="text" value="1979-02-01">
+                  <button type="button" class="date"></button>
+                </div>
             </td>
           </tr>
           <tr>
-            <td>經第三地</td>
-            <td>
-              <select class="fullWidth">
-                <option value="">請選擇</option>
-                <option value="">...</option>
-                <option value="">...</option>
-              </select>
-            </td>
+            <td><abbr class="required">必填欄位</abbr> 聯絡電話</td>
+            <td><input type="tel" name="" id="" placeholder="請輸入加上區碼的市話或行動電話號碼"></td>
             <td>目前職業</td>
             <td>
               <select class="fullWidth">
@@ -125,7 +86,7 @@
             </td>
           </tr>
           <tr>
-            <td><abbr class="required">必填欄位</abbr> 在臺聯絡地址</td>
+            <td><abbr class="required">必填欄位</abbr> 聯絡地址</td>
             <td colspan="3">
               <div class="addressSet">
                 <div class="roughly">
@@ -166,50 +127,40 @@
 
         <!-- 延伸填寫 -->
         <section class="formExtend">
-          <div class="title">海外居住資訊</div>
-          <table class="formLayout">
-            <tr>
-              <td><abbr class="required">必填欄位</abbr> 海外居住電話</td>
-              <td>
-                <div class="phoneSet">
-                  <select name="" id="">
-                    <option value="">請選擇國碼</option>
-                    <option value="">XXXXX</option>
-                    <option value="">XXXXX</option>
-                  </select>
-                  <input type="tel" name="" id="">
-                  <label> <input type="checkbox">無</label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>海外居住地址</td>
-              <td><input class="fullWidth" type="text" name="" id=""></td>
-            </tr>
-          </table>
+          <div class="title">延伸填寫 - 代申請人及保證人資料</div>
+         
+          <div class="aloneInput">
+            <abbr class="required">必填欄位</abbr> 
+            <strong>本案「代申請人」是否為上述之臺灣配偶？</strong>(若為移民機構或甲種旅行社代為申請，須額外填寫相關資料)
+            <div class="optionPool">
+              <label><input name="yesorno" type="radio">是</label>
+              <label><input name="yesorno" type="radio">否</label>
+            </div>
+          </div>
 
-          <div class="title">海外聯絡資訊</div>
-          <label class="aloneCheck"><input name="AAA" type="checkbox">同海外居住資訊</label>
-          <table class="formLayout">
-            <tr>
-              <td><abbr class="required">必填欄位</abbr> 海外居住電話</td>
-              <td>
-                <div class="phoneSet">
-                  <select name="" id="">
-                    <option value="">請選擇國碼</option>
-                    <option value="">XXXXX</option>
-                    <option value="">XXXXX</option>
-                  </select>
-                  <input type="tel" name="" id="">
-                  <label> <input type="checkbox">無</label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>海外居住地址</td>
-              <td><input class="fullWidth" type="text" name="" id=""></td>
-            </tr>
-          </table>
+          <div class="aloneInput">
+            <abbr class="required">必填欄位</abbr>
+            <strong>本案「保證人」是否為上述之臺灣配偶？</strong>
+            <div class="optionPool">
+              <label><input name="yesorno2" type="radio">是</label>
+              <label><input name="yesorno2" type="radio">否</label>
+            </div>
+          </div>
+
+
+          保證人同臺灣配偶時，應填寫以下資料：
+               英文姓名
+姓
+ 
+CHEN
+名
+HUSBAND
+* 服務機關
+全球科技
+無
+* 職務名稱
+首席工程師
+無
         </section>
 
 
