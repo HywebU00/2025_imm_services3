@@ -1,13 +1,26 @@
 .siteHeader {
-  --icon-size : 48px;
+  --icon-size : 46px;
 
   position: relative; z-index: 9;
-  padding: 16px 0; margin: 0 auto;
+  padding: 7px 0; margin: 0 auto;
+
+  // // header 圖示的陰影變化
+  // %shadowChange {
+  //   box-shadow:$grayDark 0 0 0 0 inset, $white 0 0 0 0, rgb(30 30 30 / .1) 0 2px 8px 0;
+  //   transition: .2s;
+  //   &:hover{
+  //     box-shadow: $grayDark 0 0 0 0 inset, $white 0 0 0 3px, rgb(30 30 30 / .2) 0 2px 8px 2px;
+  //   }
+  //   &:focus{
+  //     box-shadow: $grayDark 0 0 0 2px inset, $white 0 0 0 3px, rgb(30 30 30 / .2) 0 2px 8px 2px;
+  //     outline: none;
+  //   }
+  // }
 
   h1{
-    position: absolute; left: 2%; top: 16px;
+    position: absolute; left: 2%; top: 7px;
     margin: 0; padding: 0;
-    height: var(--icon-size); width: 160px;
+    height: var(--icon-size); width: 214px;
     background: url(../images/h1_mobile.png) no-repeat 0 0;
     background-size: auto 100%;
     img{ display: none; }
@@ -17,89 +30,72 @@
   .whoIs, .yourMessage, .langSwitch{ 
     font-size: .89em;
   }
-  .yourMessage>a, .langSwitch, .searchCtrl {
+  .yourMessage>a, .langSwitch, .searchCtrl, .viewMore {
     width: var(--icon-size); height: var(--icon-size); 
+    margin: 0;
     border-radius: 50%;border: none;
-    background-color: $white;
-    @extend %shadowChange;
+    background-color: transparent;
+    transition: .2s;
+    &:hover, &:focus {
+      background-color: $white;
+    }
   }
 
   // 查詢區開關 button
   .searchCtrl {
+    position: relative;
     font-size: 0;
-    background:$white url(../images/icon_search.svg) no-repeat center center;
+    background: url(../images/icon_search.svg) no-repeat center center;
+    &.closeIt{
+      background-image: none;
+       background-color: $white;
+      &::before , &::after{
+        content: '';
+        position: absolute; top: calc(50% - 1px); left: calc(50% - 8px);
+        width: 16px; height: 2px; border-radius: 1px;
+        background: $fontColor; 
+      }
+      &::before {rotate: 45deg; }
+      &::after {rotate: -45deg;}
+    }
   }
 
   // 使用者圖示
   .whoIs{
     display: none;
-    position: relative;border-radius: 30px;
-    transition: .2s;
-    img{
-      position: absolute; left: 0; top: 0;
-      width: var(--icon-size); height: var(--icon-size); 
-      border-radius: 50%;
-    }
-    a { 
-      position: relative;
-      display: block; width: 100%;
-      height: var(--icon-size); line-height: var(--icon-size);
-      padding: 0 8px 0 58px;
-      color: $fontColor;
-      font-weight: bold;
-      outline: none;
-    }
-    &:hover{
-      background-color: $white;
-      box-shadow: $white 0 0 0 3px;
-    }
-    &:has(a:focus){
-      background-color: $white;
-      box-shadow:$white 0 0 0 2px, $grayDark 0 0 0 4px;
-    }
   }
 
-  // header 圖示的陰影變化
-  %shadowChange {
-    box-shadow:$grayDark 0 0 0 0 inset, $white 0 0 0 0, rgb(30 30 30 / .1) 0 2px 8px 0;
-    transition: .2s;
-    &:hover{
-      box-shadow: $grayDark 0 0 0 0 inset, $white 0 0 0 3px, rgb(30 30 30 / .2) 0 2px 8px 2px;
-    }
-    &:focus{
-      box-shadow: $grayDark 0 0 0 2px inset, $white 0 0 0 3px, rgb(30 30 30 / .2) 0 2px 8px 2px;
-      outline: none;
-    }
-  }
 
   // 訊息通知
   .yourMessage{
     position: relative;
     &>a{
       display: block;
-      background: $white url(../images/icon_notify.svg) no-repeat center center;
-      background-size: 20px auto;
+      background: url(../images/icon_notify.svg) no-repeat center center;
+      background-size: 24px auto;
     }
     .count {
       font-size: .67em;
       min-width: 1.55em; height: 1.55em; line-height: 1.6em;
       text-align: center; border-radius: 1em;
-      position: absolute; top: -5px; right: -5px;
+      position: absolute; top: 2px;right: 0;
       background-color: $hilight; color: $white;
     }
   }
 
   // 語系切換
   .langSwitch{
+    display: none;
     font-weight: bold; color: $fontColorLight;
   }
   
+  // ...
   .viewMore {
     position: relative;
     &::before {
-      content: ''; position: absolute; top: 22px; left: 22px;
+      content: ''; position: absolute; top: 21px; left: 21px;
       width: 4px;height: 4px; border-radius: 2px;
-      box-shadow: 0 -7px 0 0 $fontColor, 0 7px 0 0 $fontColor;
+      box-shadow: 0 -6px 0 0 $fontColor, 0 6px 0 0 $fontColor;
       background-color: $fontColor;
     }
   }
@@ -107,11 +103,10 @@
   .search {display: none;}
 
   // 排版
-  .flexBox {
-    margin-right: 2%; margin-left: calc(2% + 170px);
-
+  .flexBox {    
     display: flex; flex-flow: row nowrap; align-items: center;
-    justify-content: flex-end; gap: 10px;
+    justify-content: flex-end; gap: 2px;
+    margin-right: 2%; margin-left: calc(2% + 220px);
   }  
 
   @media screen and (min-width: $wwNormal){
@@ -122,6 +117,28 @@
     display: flex; flex-flow: row nowrap; justify-content: space-between;
     align-items: center;
 
+    // header 圖示的陰影變化
+    %shadowChange {
+      box-shadow:$grayDark 0 0 0 0 inset, $white 0 0 0 0, rgb(30 30 30 / .1) 0 2px 8px 0;
+      transition: .2s;
+      &:hover{
+        box-shadow: $grayDark 0 0 0 0 inset, $white 0 0 0 3px, rgb(30 30 30 / .2) 0 2px 8px 2px;
+      }
+      &:focus{
+        box-shadow: $grayDark 0 0 0 2px inset, $white 0 0 0 3px, rgb(30 30 30 / .2) 0 2px 8px 2px;
+        outline: none;
+      }
+    }
+
+    .yourMessage>a, .langSwitch, .searchCtrl, .viewMore {
+      background-color: $white;
+      @extend %shadowChange;
+    }
+    
+    .yourMessage{
+      .count {top: -5px; right: -5px;}
+    }
+
     h1{
       position: static; height: auto; width: auto;
       background: none;
@@ -129,9 +146,39 @@
     }
 
     // 小圓圖示
-    .searchCtrl {display: none;}
-    .search {display: block;}
-    .whoIs{display: block; white-space: nowrap;}
+    .searchCtrl, .viewMore  {display: none;}
+    .search, .langSwitch {display: block;}
+
+    // 使用者圖示
+    .whoIs{
+      display: block;
+      position: relative;border-radius: 30px;
+      transition: .2s;
+      img{
+        position: absolute; left: 0; top: 0;
+        width: var(--icon-size); height: var(--icon-size); 
+        border-radius: 50%;
+      }
+      a { 
+        position: relative;
+        display: block; width: 100%;
+        height: var(--icon-size); line-height: var(--icon-size);
+        padding: 0 8px 0 58px;
+        color: $fontColor;
+        font-weight: bold;
+        outline: none;
+      }
+      &:hover{
+        background-color: $white;
+        box-shadow: $white 0 0 0 3px;
+      }
+      &:has(a:focus){
+        background-color: $white;
+        box-shadow:$white 0 0 0 2px, $grayDark 0 0 0 4px;
+      }
+    }
+
+    .whoIs {display: block; white-space: nowrap;}
     .search {
       flex: 1 1 auto;
       width: auto; max-width: 500px;
