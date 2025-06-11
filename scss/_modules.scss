@@ -266,7 +266,6 @@
       list-style: none; margin: 0;padding: 0;
       line-height: 1.2;
       color: $fontColorLight;
-      // outline: 1px solid #f008;
       outline-offset: -1px;
       overflow: hidden;
       li{
@@ -303,6 +302,11 @@
         }
       }
     }
+  }
+
+  &:has(.status.fail) {
+    .fileType ,
+    .fileName {opacity: .6;}
   }
 
   // 刪除、暫停、取消
