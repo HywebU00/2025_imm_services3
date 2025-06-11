@@ -187,9 +187,192 @@
 // ---------------------------------------------------------------- //
 
 
+// 上傳區（拖曳檔案至此 或 瀏覽電腦檔案）
+// ---------------------------------------------------------------- //
+.uploadArea{
+  padding: 40px;
+  text-align: center;
+  background-color: $grayPale;
+  border: 2px dashed $borderColor;
+  border-radius: $radius1;
 
+  &::before {
+    content: ''; display: inline-block;
+    width: 36px;height: 36px;
+    background: url(../images/icon_upload.svg) no-repeat 0 0;
+    background-size: 100% auto;
+  }
+  p{
+    margin: 16px auto;
+
+    &.or{
+      position: relative;
+      font-size: .78em;
+      height: 2em; line-height: 2;
+
+      &::before, &::after {
+        position: absolute; top: 50%;
+        content: ''; display: inline-block;
+        width: 100px; height: 1px;
+        background-color: $borderColorLight;
+      }
+      &::before {
+        right: calc(50% + 15px);
+      }
+      &::after {
+        left: calc(50% + 15px);
+      }
+    }
+  }
+
+  .browseFile {
+    margin: 16px auto 0;
+    width: 10em;
+  }
+
+  &:hover{
+    border-style: solid;
+    &::before {
+      filter: brightness(.5);
+    }
+  }
+}
 // ---------------------------------------------------------------- //
 
+
+
+
+// 檔案上傳狀態、進度條
+// ---------------------------------------------------------------- //
+.uploadStatus {
+  position: relative;
+  margin: 24px 0; padding: 16px;
+  min-height: 90px;
+  border: 1px solid $borderColorLight;
+  box-shadow: 0 2px 8px 0 $shadow1;
+  border-radius: $radius1;
+  overflow: hidden;
+
+  .fileInfo {
+    float: left;
+    position: relative;
+    padding-left: 56px;
+    .fileType{
+      position: absolute; left: 0; top: 8px;
+    }
+
+    ul{
+      list-style: none; margin: 0;padding: 0;
+      line-height: 1.2;
+      color: $fontColorLight;
+      // outline: 1px solid #f008;
+      outline-offset: -1px;
+      overflow: hidden;
+      li{
+        &:not(.fileName) {
+          float: left; position: relative;
+          padding-right: 24px;
+          font-size: .78em;
+          &::after {
+            content: '';
+            position: absolute; right: 10px; top: .4em;
+            width: 4px; height: 4px; border-radius: 2px;
+            background-color: $fontColorLight;
+          }
+        }
+        &:last-child{
+          padding-right: 4px;
+          &::after { display: none; padding-right: 0;}
+        }
+        &.fileName {
+          float: none;
+          margin-bottom: 14px;
+          font-weight: bold;font-size: .89em;
+          color: $fontColorDark;
+        }
+        &.status {
+          color: #007AB8;
+          padding-left: 22px;
+          background-repeat: no-repeat;
+          background-size: 18px;
+          background-position: 1px -1px;
+          background-image: url(../images/icon_upl_ing.svg);
+          &.done{ color: #00754B;background-image: url(../images/icon_upl_done.svg);}
+          &.fail { color: #C40000;background-image: url(../images/icon_upl_fail.svg);}
+        }
+      }
+    }
+  }
+
+  // 刪除、暫停、取消
+  .funcButtons {
+    float: right; margin-top: 6px;
+    button{
+      width: 40px;height: 40px;
+      margin: 0; padding: 0;
+      border-radius: 50%;
+      border: none; box-shadow: none;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      background-position: center center;
+      transition: .2s;
+      &.delete { background-image: url(../images/icon_delete.svg);}
+      &.pause {background-image: url(../images/icon_pause.svg);}
+      &.cancel {background-image: url(../images/icon_cancel.svg);}
+
+      &:hover{ background-color: $gray70;}
+      &:focus{
+        filter: brightness(2.5);
+        background-color: #333;
+      }
+    }
+
+    &:has(+.progressBar) { margin-bottom: 12px;}
+  }
+
+
+  // 進度條
+  .progressBar{
+    clear: both;display: block; position: relative;
+    height: 8px; border-radius: 4px;
+    background-color: $gray70;
+    
+
+    .bar {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      background-color: $secondaryColor;
+      border-radius: 4px;
+    }
+  }
+
+}
+// ---------------------------------------------------------------- //
+
+
+
+// 檔案類別圖示
+// ---------------------------------------------------------------- //
+.fileType{
+  display: block; width: 44px; height: 40px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &.jpg{background-image: url(../images/fileType_jpg.svg);}
+  &.jpeg{background-image: url(../images/fileType_jpeg.svg);}
+  &.png{background-image: url(../images/fileType_png.svg);}
+  &.bnp{background-image: url(../images/fileType_bnp.svg);}
+  &.pdf{background-image: url(../images/fileType_pdf.svg);}
+  &.doc{background-image: url(../images/fileType_doc.svg);}
+  &.ppt{background-image: url(../images/fileType_ppt.svg);}
+  &.zip{background-image: url(../images/fileType_zip.svg);}
+  &.txt{background-image: url(../images/fileType_txt.svg);}
+  &.mov{background-image: url(../images/fileType_mov.svg);}
+  &.mp3{background-image: url(../images/fileType_mp3.svg);}
+  &.wmv{background-image: url(../images/fileType_wmv.svg);}
+
+}
 // ---------------------------------------------------------------- //
 
 

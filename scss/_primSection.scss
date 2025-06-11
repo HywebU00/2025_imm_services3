@@ -44,10 +44,6 @@
     
   }
   
-  // @media screen and ( max-width: calc($wwMedium - 1px) ) {
-  //   padding-left: 3%; padding-right: 3%;
-  // }
-
 
 }
 // ---------------------------------------------------------------- //
@@ -57,8 +53,20 @@
 
 
 
+// 文件上傳
+// ---------------------------------------------------------------- //
 .upload {
-  h4 { font-size: 1.2em;}
+
+  h4, p{line-height: 1.5;}
+  h4 { 
+    margin: 0; 
+    font-size: 1.11em; font-weight: bold; 
+    color: $fontColorDark;
+    &+p{
+      margin:12px 0;
+      font-size: .89em; color: $fontColorLight;
+    }
+  }
 
   // 照片上傳
   .photoHere {
@@ -117,6 +125,24 @@
     }
   }
 
+  .uploadArea{
+    margin: 24px 0;
+    &+p{
+      color: $fontColorLight;
+      font-size: .875rem; margin: 16px 0;
+    }
+    &:last-child {margin-bottom: 0;}
+  }
+
+
+  .eachUpload{
+    width: 92%;
+    margin: 0 auto;
+    padding: 32px 2%;
+    
+    &+.eachUpload {border-top: 1px dashed $borderColorLight;}
+  }
+
   @media screen and (min-width: $wwMedium){
 
     .photoHere{
@@ -140,3 +166,4 @@
     }
   }
 }
+// ---------------------------------------------------------------- //

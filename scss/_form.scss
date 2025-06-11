@@ -134,8 +134,30 @@ label.fileButton{
 
 
 
-
+// 瀏覽電腦檔案
 // ---------------------------------------------------------------- //
+label.browseFile{
+  display: block;
+  font-size: .89em; font-weight: bold;
+  border-radius: $radius;
+  height: 2.5em; line-height: 2.6; text-align: center;
+  box-shadow:$primaryColor 0 0 0 1px; color: $primaryColor;
+  cursor: pointer;
+  transition: .2s;
+
+  input[type="file"] { 
+    font-size: 0; width: 0; border: none; background-color: transparent;
+  }
+
+  &:hover{
+    background-color: $white;
+  }
+
+  &:has(input:focus) { 
+    background-color: $white;
+    box-shadow:$primaryColor 0 0 0 2px;  
+  }
+}
 // ---------------------------------------------------------------- //
 
 

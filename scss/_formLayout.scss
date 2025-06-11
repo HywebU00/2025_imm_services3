@@ -262,9 +262,8 @@
 // 提示訊息：「系統已自動儲存當前進度」
 // ---------------------------------------------------------------- //
 .savingMsg {
-  display: inline-block;
-  position: relative; left: 50%; translate: -50% 0;
-  padding: 1em 1.5em;
+  display: block; width: max-content;
+  padding: 1em 1.5em; margin: 40px auto;
   font-size: .83em; line-height: 1;
   border-radius: 2em;
   background-color: $grayLight; color: $fontColorLight;
