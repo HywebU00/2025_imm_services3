@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陸配依親居留＿線上申請</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/uieffect.js"></script>
+</head>
+<body>
+  <header class="siteHeader">
+    <h1><a href="#"><img src="publicData/h1.png" alt="內政部移民署 線上服務"></a></h1>
+    <div class="flexBox">
+      <button class="searchCtrl" type="button" arial-expanded="false">查詢區</button>
+      <section class="search">
+        <form action="">
+          <input type="text" placeholder="搜尋關鍵字">
+          <button type="button">查詢</button>
+        </form>
+      </section>
+      <div class="whoIs">
+        <img src="publicData/avatar.png" alt="">
+        <a href="#">陳澄</a>
+      </div>
+      <div class="yourMessage">
+        <a aria-label="你有2則訊息" href="#"></a>
+        <span class="count">2</span>
+      </div>
+      <button class="langSwitch" type="button">EN</button>
+      <button class="viewMore" type="button"></button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <h2>陸配依親居留線上送件服務</h2>
+
+    <section class="steps">
+      <ol>
+        <li><i>1</i><span>申請人資料</span></li>
+        <li><i>2</i><span>臺灣配偶</span></li>
+        <li class="now"><i>3</i><span>親屬及子女</span></li>
+        <li><i>4</i><span>文件上傳</span></li>
+        <li><i>5</i><span>預覽送出</span></li>
+      </ol>
+    </section>
+
+    <section class="form">
+      <h3>親屬及子女</h3>
+      <p class="note"><abbr class="required">必填欄位</abbr>為必須填寫的資料欄位</p>
+      <form action="">
+        <section>
+          <ul class="questions">
+            <li>
+              <p><abbr class="required">必填欄位</abbr> 申請人至今為止(含本次)之結婚次數？</p>
+              <select name="" id="">
+                <option value="">1</option>
+                <option value="" selected>2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+              </select>
+            </li>
+            <li>
+              <p><abbr class="required">必填欄位</abbr> 申請人至今為止(含本次)之子女總人數？</p>
+              <select name="" id="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="" selected>3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+              </select>
+            </li>
+            <li>
+              <p><abbr class="required">必填欄位</abbr> 申請人之「父」符合以下何種情形？</p>
+              <div class="optionPool">
+                <label><input type="radio">存</label>
+                <label><input type="radio">歿</label>
+                <label><input type="radio">離婚</label>
+              </div>
+            </li>
+            <li>
+              <p><abbr class="required">必填欄位</abbr> 申請人之「母」符合以下何種情形？</p>
+              <div class="optionPool">
+                <label><input type="radio">存</label>
+                <label><input type="radio">歿</label>
+                <label><input type="radio">離婚</label>
+              </div>
+            </li>
+            <li>
+              <p><abbr class="required">必填欄位</abbr> 申請人是否有「養父母」？(可複選)</p>
+              <div class="optionPool">
+                <label><input type="radio">是，有養父</label>
+                <label><input type="radio">是，有養母</label>
+                <label><input type="radio">否</label>
+              </div>
+            </li>
+            <li>
+              <p><abbr class="required">必填欄位</abbr> 申請人之「養父」符合以下何種情形？</p>
+              <div class="optionPool">
+                <label><input type="radio">存</label>
+                <label><input type="radio">歿</label>
+                <label><input type="radio">離婚</label>
+              </div>
+            </li>
+            <li>
+              <p><abbr class="required">必填欄位</abbr> 申請人之「養母」符合以下何種情形？</p>
+              <div class="optionPool">
+                <label><input type="radio">存</label>
+                <label><input type="radio">歿</label>
+                <label><input type="radio">離婚</label>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="formExtend">
+          <div class="title">申請人之「母」資料</div>
+          <table class="formLayout">
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 中文姓名</td>
+              <td><input class="fullWidth" type="text" name="" id="" value="曾好"></td>
+              <td><abbr class="required">必填欄位</abbr> 英文姓名</td>
+              <td>
+                <div class="fullNameSet">
+                  <label>姓<input type="text" value="TSENG"></label>
+                  <label>名<input type="text" value="GOOD"></label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 出生日期</td>
+              <td>
+                <div class="datePicker">
+                  <input id="date-of-birth" type="text" value="1991-01-24">
+                  <button type="button" class="date"></button>
+                </div>
+              </td>
+              <td><abbr class="required">必填欄位</abbr> 身分證號</td>
+              <td><input class="fullWidth" type="text" value=""></td>
+            </tr>
+
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 護照號碼</td>
+              <td><input class="fullWidth" type="text"></td>
+              <td><abbr class="required">必填欄位</abbr> 職業</td>
+              <td>
+                <select class="fullWidth" name="" id="">
+                  <option value="">請選擇</option>
+                  <option value="">XXXXX</option>
+                  <option value="">XXXXX</option>
+                  <option value="">XXXXX</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+
+          <label class="aloneCheck"><input name="AAA" type="checkbox">同申請人「海外居住資訊」</label>
+          <table class="formLayout">
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 聯絡電話</td>
+              <td>
+                <div class="phoneSet">
+                  <select name="" id="">
+                    <option value="">請選擇國碼</option>
+                    <option value="">XXXXX</option>
+                    <option value="">XXXXX</option>
+                  </select>
+                  <input type="tel" name="" id="">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 現居地址</td>
+              <td><input class="fullWidth" type="text" name="" id=""></td>
+            </tr>
+          </table>
+
+
+
+          <div class="title">申請人之「養父」資料</div>
+          <table class="formLayout">
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 姓名</td>
+              <td><input class="fullWidth" type="text" name="" id="" value="林誠"></td>
+              <td><abbr class="required">必填欄位</abbr> 出生日期</td>
+              <td>
+                <div class="datePicker">
+                  <input id="date-of-birth" type="text" value="1991-01-24">
+                  <button type="button" class="date"></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><abbr class="required">必填欄位</abbr> 職業</td>
+              <td>
+                <select class="fullWidth" name="" id="">
+                  <option value="">請選擇</option>
+                  <option value="">XXXXX</option>
+                  <option value="">XXXXX</option>
+                  <option value="">XXXXX</option>
+                </select>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+          <div class="title">申請人之「子女」資料</div>
+          <table>
+            <thead>
+              <tr>
+                <th>項次</th>
+                <th><abbr class="required">必填欄位</abbr> 姓名</th>
+                <th><abbr class="required">必填欄位</abbr> 出生日期</th>
+                <th><abbr class="required">必填欄位</abbr> 親屬權歸屬</th>
+                <th><abbr class="required">必填欄位</abbr> 出生繫屬</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input type="text" name="" id="">
+                </td>
+                <td>
+                  <div class="datePicker">
+                    <input id="date-of-birth" type="text" value="">
+                    <button type="button" class="date"></button>
+                  </div>
+                </td>
+                <td>
+                  <select class="fullWidth" name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">XXXXX</option>
+                    <option value="">XXXXX</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="fullWidth" name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">XXXXX</option>
+                    <option value="">XXXXX</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <input type="text" name="" id="">
+                </td>
+                <td>
+                  <div class="datePicker">
+                    <input id="date-of-birth" type="text" value="">
+                    <button type="button" class="date"></button>
+                  </div>
+                </td>
+                <td>
+                  <select class="fullWidth" name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">XXXXX</option>
+                    <option value="">XXXXX</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="fullWidth" name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">XXXXX</option>
+                    <option value="">XXXXX</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  <input type="text" name="" id="">
+                </td>
+                <td>
+                  <div class="datePicker">
+                    <input id="date-of-birth" type="text" value="">
+                    <button type="button" class="date"></button>
+                  </div>
+                </td>
+                <td>
+                  <select class="fullWidth" name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">XXXXX</option>
+                    <option value="">XXXXX</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="fullWidth" name="" id="">
+                    <option value="">請選擇</option>
+                    <option value="">XXXXX</option>
+                    <option value="">XXXXX</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+
+
+        <div class="savingMsg">系統已自動儲存當前進度</div>
+
+        <div class="btnDiv">
+          <div class="hasHiddenHint">
+            <button type="button"> 暫存草稿（結束編輯）</button>
+              <button type="button" class="hiddenHint">說明</button>
+              <div class="hintContent">點選暫存草稿，後續可至「暫存草稿匣」再繼續編輯，您已填寫的資料不會遺失，敬請放心使用</div>
+          </div>
+          <button type="button" class="submit">下一步：文件上傳</button>
+        </div>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <footer class="siteFooter">
+    <div class="contactInfo">
+      <p>常見問題：請見 <a href="#">內政部移民署【網路申辦服務】常見問題及解答</a> 或 <a href="#">移民署中文網-常見問題</a></p>
+      <p>負責單位：入出國事務組-停留科</p>
+      <p>聯絡電話：+886-2-23889393 分機1039</p>
+    </div>
+    <div class="base">
+      <ul>
+        <li><a href="#">隱私權保護服務及宣告</a></li>
+        <li><a href="#">安全防護與回復機制</a></li>
+        <li><a href="#">資訊安全宣告</a></li>
+      </ul>
+      <div>
+        <p>內政部移民署 版權所有 © NATIONAL IMMIGRATION AGENCY</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

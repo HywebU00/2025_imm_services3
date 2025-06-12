@@ -56,6 +56,7 @@ input[type="date"]{
 // ---------------------------------------------------------------- //
 select {
   height: 2.8em;
+  height: calc(2.8em - 2px);
   margin: 5px 0; padding: 0 40px 0 .6em;
   border-radius: $radius;
   border: 1px solid $grayLight;
