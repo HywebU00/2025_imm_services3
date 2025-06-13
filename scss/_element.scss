@@ -58,3 +58,46 @@ button.closeThis{
   }
 }
 // ---------------------------------------------------------------- //
+
+
+
+// ---------------------------------------------------------------- //
+.navArrow {
+  position: relative;
+  width: 44px; height: 44px; border-radius: 50%;
+  background-color: transparent;
+  background-color: $grayPale;
+  transition: .2s;
+
+  &::before {
+    content: '';
+    position: absolute; top: calc(50% - 5px);
+    width: 10px; height: 10px;
+    border: 2px solid $borderColorDark;
+    border-top: none; border-right: none;
+    transition: .2s;
+  }
+  &.prev{
+    &::before {left: calc(50% - 3px);rotate: 45deg;}
+  }
+  &.next{
+    &::before {right: calc(50% - 4px);rotate: 225deg;}
+  }
+
+  &:hover{
+    background-color: $grayLight;
+  }
+  &:focus {
+    background-color: $secondaryColor30;
+    &::before{ border-color: $white;}
+  }
+
+  &[disabled] {
+    cursor:not-allowed;
+    &::before{ border-color: $borderColor;}
+    &:hover{
+      background-color: $grayPale;
+    }
+  }
+}
+// ---------------------------------------------------------------- //

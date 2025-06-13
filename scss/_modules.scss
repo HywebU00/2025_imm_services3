@@ -82,7 +82,6 @@
   &>*{
     flex: 1 1 auto;
   }
-  // .button{display: inline-block;}
   .button>a { display: block; text-decoration: none; color: $fontColorLight;}
 
   button, 
@@ -381,3 +380,19 @@
 // ---------------------------------------------------------------- //
 
 
+
+// 應檢附文件 說明
+// ---------------------------------------------------------------- //
+.rules {
+  background-color: $gray70;
+  line-height: 2;
+  padding: 32px 5%;
+  width: 92%; margin: 0 auto;
+}
+// ---------------------------------------------------------------- //
+
+// 排序
+.sorting {
+  text-align: right;
+  margin-bottom: 8px;
+}

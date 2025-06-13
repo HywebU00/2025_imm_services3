@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陸配依親居留＿線上申請</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/uieffect.js"></script>
+</head>
+<body>
+  <header class="siteHeader">
+    <h1><a href="#"><img src="publicData/h1.png" alt="內政部移民署 線上服務"></a></h1>
+    <div class="flexBox">
+      <button class="searchCtrl" type="button" arial-expanded="false">查詢區</button>
+      <section class="search">
+        <form action="">
+          <input type="text" placeholder="搜尋關鍵字">
+          <button type="button">查詢</button>
+        </form>
+      </section>
+      <div class="whoIs">
+        <img src="publicData/avatar.png" alt="">
+        <a href="#">陳澄</a>
+      </div>
+      <div class="yourMessage">
+        <a aria-label="你有2則訊息" href="#"></a>
+        <span class="count">2</span>
+      </div>
+      <button class="langSwitch" type="button">EN</button>
+      <button class="viewMore" type="button"></button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <h2>陸配依親居留線上送件服務</h2>
+  
+    <section class="form">
+      <h3>案件查詢</h3>
+
+      <section class="caseSearch">
+        <div class="dateRange">
+          <button class="navArrow prev"></button>
+          <div class="period"><time aria-label="起始日期">2024/05</time> - <time aria-label="結束日期">2024/10</time></div>
+          <button class="navArrow next" disabled></button>
+        </div>
+        <div class="buttonGroup">
+          <button type="button">自訂查詢區間</button>
+          <div class="button"><a href="#">進階搜尋</a></div>
+        </div>
+      </section>
+
+      <div class="filterTerms">
+        <ul>
+          <li class="active"><a href="#">全部<span class="count">13</span></a></li>
+          <li><a href="#">已完成<span class="count">2</span></a></li>
+          <li><a href="#">初審中<span class="count">3</span></a></li>
+          <li><a href="#">待補件<span class="count">1</span></a></li>
+          <li><a href="#">待繳費<span class="count">2</span></a></li>
+          <li><a href="#">複審中<span class="count">3</span></a></li>
+          <li><a href="#">不受理/不核准<span class="count">2</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sorting">
+        排序
+        <select name="" id="">
+          <option value="">由新至舊</option>
+          <option value="">由舊至新</option>
+        </select>
+      </div>
+      
+      <section class="caseList">
+        <section class="oneCase">
+          <div class="caseId">
+            <span class="idNumber">申請案號：<em>113551035289</em></span>
+            <button type="button">查看申請資料</button>
+          </div>
+          <dl>
+            <div>
+              <dt>送件日期</dt>
+              <dd>2024/10/25</dd>
+            </div>
+            <div>
+              <dt>申請名稱</dt>
+              <dd>劉美麗</dd>
+            </div>
+            <div>
+              <dt>狀態</dt>
+              <dd>初審中</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="oneCase">
+          <div class="caseId">
+            <span class="idNumber">申請案號：<em>113551035287</em></span>
+            <button type="button">查看申請資料</button>
+          </div>
+          <dl>
+            <div>
+              <dt>送件日期</dt>
+              <dd>2024/10/25</dd>
+            </div>
+            <div>
+              <dt>申請名稱</dt>
+              <dd>周子渝</dd>
+            </div>
+            <div>
+              <dt>狀態</dt>
+              <dd>初審中</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="oneCase">
+          <div class="caseId">
+            <span class="idNumber">申請案號：<em>113551035290</em></span>
+            <button type="button">查看申請資料</button>
+          </div>
+          <dl>
+            <div>
+              <dt>送件日期</dt>
+              <dd>2024/10/22</dd>
+            </div>
+            <div>
+              <dt>申請名稱</dt>
+              <dd>陳金鑫</dd>
+            </div>
+            <div>
+              <dt>狀態</dt>
+              <dd>已完成</dd>
+            </div>
+          </dl>
+          <div class="operation" aria-label="可進行的操作">
+            <button type="button">延期申請</button>
+            <button type="button">資料異動</button>
+            <button type="button">補發申請</button>
+          </div>
+        </section>
+
+        <section class="oneCase">
+          <div class="caseId">
+            <span class="idNumber">申請案號：<em>113551035288</em></span>
+            <button type="button">查看申請資料</button>
+          </div>
+          <dl>
+            <div>
+              <dt>送件日期</dt>
+              <dd>2024/10/22</dd>
+            </div>
+            <div>
+              <dt>申請名稱</dt>
+              <dd>吳溫</dd>
+            </div>
+            <div>
+              <dt>狀態</dt>
+              <dd>待補件</dd>
+            </div>
+          </dl>
+
+          <div class="operation" aria-label="可進行的操作">
+            <button type="button">前往補件</button>
+          </div>
+
+        </section>
+
+        <section class="oneCase">
+          <div class="caseId">
+            <span class="idNumber">申請案號：<em>113551035279</em></span>
+            <button type="button">查看申請資料</button>
+          </div>
+          <dl>
+            <div>
+              <dt>送件日期</dt>
+              <dd>2024/10/22</dd>
+            </div>
+            <div>
+              <dt>申請名稱</dt>
+              <dd>陳飛飛</dd>
+            </div>
+            <div>
+              <dt>狀態</dt>
+              <dd>待補件</dd>
+            </div>
+          </dl>
+          <div class="operation" aria-label="可進行的操作">
+            <button type="button">前往臨櫃應備文件與注意事項</button>
+          </div>
+        </section>
+
+        <section class="oneCase">
+          <div class="caseId">
+            <span class="idNumber">申請案號：<em>113551035265</em></span>
+            <button type="button">查看申請資料</button>
+          </div>
+          <dl>
+            <div>
+              <dt>送件日期</dt>
+              <dd>2024/10/11</dd>
+            </div>
+            <div>
+              <dt>申請名稱</dt>
+              <dd>李李安</dd>
+            </div>
+            <div>
+              <dt>狀態</dt>
+              <dd>不受理/不核准</dd>
+            </div>
+          </dl>
+          <div class="operation" aria-label="可進行的操作">
+            <button type="button">查看原因</button>
+          </div>
+        </section>
+
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="siteFooter">
+    <div class="contactInfo">
+      <p>常見問題：請見 <a href="#">內政部移民署【網路申辦服務】常見問題及解答</a> 或 <a href="#">移民署中文網-常見問題</a></p>
+      <p>負責單位：入出國事務組-停留科</p>
+      <p>聯絡電話：+886-2-23889393 分機1039</p>
+    </div>
+    <div class="base">
+      <ul>
+        <li><a href="#">隱私權保護服務及宣告</a></li>
+        <li><a href="#">安全防護與回復機制</a></li>
+        <li><a href="#">資訊安全宣告</a></li>
+      </ul>
+      <div>
+        <p>內政部移民署 版權所有 © NATIONAL IMMIGRATION AGENCY</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

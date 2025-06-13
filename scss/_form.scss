@@ -1,9 +1,12 @@
+$inputHeight : 2.7em;
+
 form{
   display: block; margin: 0;
 }
 
 input, select, textarea, button {
   font-size: inherit;
+  color: $fontColor;
 }
 // 文字輸入框
 // ---------------------------------------------------------------- //
@@ -14,7 +17,7 @@ input[type="tel"],
 input[type="url"],
 input[type="password"],
 input[type="date"]{
-  padding: 0 .6em; margin: 5px 0; height: 2.7em;
+  padding: 0 .6em; margin: 5px 0; height: $inputHeight;
   border-radius: $radius;
   border: 1px solid $grayLight;
   background-color: $white;
@@ -55,8 +58,7 @@ input[type="date"]{
 // 下拉選單
 // ---------------------------------------------------------------- //
 select {
-  height: 2.8em;
-  height: calc(2.8em - 2px);
+  height: $inputHeight;
   margin: 5px 0; padding: 0 40px 0 .6em;
   border-radius: $radius;
   border: 1px solid $grayLight;
@@ -79,14 +81,27 @@ select {
 
 // 按鈕
 // ---------------------------------------------------------------- //
+
 button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   cursor: pointer;
-  height: 2.7em;margin: 5px;
-  border-radius: $radius;
-  outline: none;
+  height: $inputHeight;margin: 5px;
+  border-radius: $radius1;
+  outline: none; border: none;
+
+}
+
+// 按鈕樣式的連結
+.button{
+  display: inline-block;margin: 5px;
+  a{
+    display: block;
+    height: $inputHeight; line-height: $inputHeight;
+    border-radius: $radius1;
+    text-decoration: none; color: $fontColor;
+  }
 }
 // ---------------------------------------------------------------- //
 

@@ -1,9 +1,286 @@
-.rules {
-  background-color: $gray70;
-  line-height: 2;
-  padding: 32px 5%;
-  width: 92%; margin: 0 auto;
+// 6/13 **********************************************************************
+.oneCase {
+  border: 1px solid $borderColor;
+  margin: 0 0 16px; 
+  padding: min(2vw, 16px);
+  border-radius: $radius2;
+
+  // 申請案號
+  .caseId{
+    display: flex; flex-flow: row wrap; justify-content: space-between;
+    padding:1px 0 16px; margin-bottom: 8px;
+    border-bottom: 1px solid $borderColorLight;
+    .idNumber{
+      margin-right: 8px;
+      em{ 
+        display: block; margin: 8px 0 0;
+        font-style: normal; font-size: 1.2em; font-weight: bold;
+      }
+    }
+    button {
+      margin:4px; padding-left: 16px; padding-right: 16px;
+    }
+  }
+
+  // 送件日期、申請名稱、狀態
+  dl{
+    line-height: 1.2; margin: 0; padding: 0;
+    &>div{
+      display: inline-block;padding: 8px 0;
+    }
+    dt, dd{ display: inline-block;}
+    dt{
+      position: relative;
+      padding: 0 12px 0 0;
+      font-weight: bold; color: $fontColorDark;
+      &::after {
+        content: ''; position: absolute; right: 0; top: calc(50% - 3px);
+        width: 5px;height: 5px; border-radius: 50%;
+        background-color: $gray;
+      }
+    }
+    dd{
+      margin: 0; padding-right: 18px; padding-left: 2px;
+    }
+  }
+
+  // 可進行的操作
+  .operation{
+    display: flex; flex-wrap: wrap; align-items: center;
+    gap: 8px;
+    border-top: 1px solid $borderColorLight;
+    padding-top: 16px; margin-top: 8px;
+    
+    &::before {
+      flex: 1 0 80%; margin-right: auto;
+
+      content: attr(aria-label);
+      font-weight: bold; color: $fontColorDark;
+      white-space: nowrap;
+    }
+    button{
+      flex: 0 0 max-content; min-width: 30%;
+      padding-left: 16px; padding-right: 16px; 
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    &:has(button:only-child) {
+      &::before {flex-basis: 30%;}
+    }
+  }
+
+  @media screen and (min-width: 800px){
+
+    // 申請案號
+    .caseId{
+      justify-content: flex-start; align-items: center;
+      flex: 0 0 100%;
+      padding-bottom: 16px; margin-bottom: 8px;
+      border-bottom: 1px dashed $borderColorLight;
+      .idNumber{
+        em{ display: inline-block; margin: 0;}
+      }
+      button {
+        margin: 0 0 0 24px;
+      }
+    }
+
+    // 送件日期、申請名稱、狀態
+    dl{
+      display: flex; flex-flow: row wrap;
+      gap: 3.5%;
+      &>div{
+        flex: 1 1 31%;
+        max-width: max-content;
+        position: relative;
+        padding: 20px 16px 16px 0;
+      }
+    }
+
+    // 可進行的操作
+    .operation{
+      justify-content: flex-start;
+      padding-top: 8px;
+      &::before {
+        flex: 0 0 auto; margin-right: 16px;
+      }
+      &:has(button:only-child) {
+        &::before {flex-basis: auto;}
+      }      
+      button{
+        flex: 0 0 max-content; min-width: 7em;
+        padding-left: 16px; padding-right: 16px;
+        white-space: nowrap;
+      }
+    }
+
+  }
+
+
+  @media screen and (min-width: $wwNormal){
+
+    display: flex; flex-flow: row wrap; align-items: flex-start;
+    gap:8px;
+
+    .caseId{ flex: 0 0 100%;}
+
+    // 送件日期、申請名稱、狀態
+    dl{
+      flex: 0 1 50%; flex-wrap: nowrap;
+      gap: 0;
+      &>div{ 
+        flex: 0 0 auto;
+        white-space: nowrap;padding-top: 15px;
+      }
+    }
+
+    // 可進行的操作
+    .operation{
+      margin-top: 0; padding-top: 0;
+      border: none;
+    }
+
+
+  }
+
 }
 
 
 
+// ---------------------------------------------------------------- //
+
+
+
+
+
+
+// 案件查詢
+// ---------------------------------------------------------------- //
+.caseSearch{
+
+  .dateRange{
+    display: flex; justify-content: center;
+    align-items: center; gap:5px;
+
+    font-size: 1.1em;
+  }
+  
+  .buttonGroup{
+    margin: 10px auto 40px;
+    text-align: center;
+    .button>a,
+    button{
+      @extend %gradient3;
+      box-shadow: $shadow1 0 4px 6px -2px;
+      padding-left: 24px; padding-right: 24px;
+  
+    }
+    .button{
+      
+      &>a{
+      }
+    }
+  
+  }
+
+
+  @media screen and (min-width: $wwMedium){
+    margin: 10px auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .buttonGroup{ margin: 0;}
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+// ---------------------------------------------------------------- //
+.searchCaseData {
+  .data{
+    em{ font-style: normal; font-size: 1.2em; font-weight: bold;}
+  }
+  button {
+    margin: 0 0 0 24px; padding-left: 16px; padding-right: 16px;
+  }
+}
+
+
+// 
+// ---------------------------------------------------------------- //
+.filterTerms{
+  margin: 32px auto;
+  ul{ 
+    list-style: none; margin: 0; padding:8px 0; line-height: 1.2;
+    display: flex; flex-wrap: wrap; gap: 16px;
+  }
+  li{
+    a {
+      display: block; text-decoration: none; color: $fontColor;
+      padding: .8em 16px .7em 20px; border-radius: 2em;
+      white-space: nowrap;
+      background-color: $grayPale;
+      box-shadow: $shadow1 0 3px 8px;
+      border-bottom: 1px solid $white;
+      .count{
+        display: inline-block; text-align: center;
+        height: 1.4em; line-height: 1.5; min-width: 1.4em;
+        margin-left: 6px; padding:0 8px;
+        border-radius: 1em;
+        background-color: $grayDark;
+        color: $white;
+      }
+      &:hover, &:focus {
+      }
+    }
+
+    &.active{
+      a{
+        background-color: $secondaryColor; color: $white;
+        border-bottom-color: transparent;
+        .count{
+          background-color: $grayPale;
+          color: $fontColor;
+        }
+      }
+    }
+  }
+
+}
+// ---------------------------------------------------------------- //
+
+
+// 表格條列
+// ---------------------------------------------------------------- //
+.list{
+  margin: 40px auto;
+  &>table {
+
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 1.5;
+
+    th, td{
+      padding: .7em 12px; text-align: center;
+    }
+
+    thead{
+      border-bottom: 2px solid $borderColor;
+    }
+    tbody {
+      tr{
+        border-bottom: 1px solid $borderColorLight;
+      }
+      td{ border-right: 1px solid #000;}
+      td:nth-child(1){ width: 10em;}
+      td:nth-child(2){ width: 10em;}
+      td:nth-child(3){ width: auto;}
+    
+    }
+  }
+
+}
+// ---------------------------------------------------------------- //
