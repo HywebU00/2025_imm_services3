@@ -2,7 +2,6 @@
 // ---------------------------------------------------------------- //
 .form {
   @extend %primSection; // 大圓角，有陰影的主要區塊
-  padding-left: 5%; padding-right: 5%;
 
   .formLayout { width: 100%; margin: 0 auto;}
 

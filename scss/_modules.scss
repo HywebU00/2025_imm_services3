@@ -82,7 +82,10 @@
   &>*{
     flex: 1 1 auto;
   }
-  .button>a { display: block; text-decoration: none; color: $fontColorLight;}
+  .button{
+    margin: 0;
+    &>a { display: block; text-decoration: none; color: $fontColorLight;}
+  }
 
   button, 
   input[type="button"], input[type="submit"], input[type="reset"],
@@ -90,8 +93,7 @@
     padding: 0 1em;
     height: 3.25em; margin: 0;
     line-height: 3.25;
-    // font-size: 1.11em; 
-      font-size: 1em;
+    font-size: 1em;
     font-weight: bold; text-align: center; 
     border: none; outline: none;
     border-radius: $radius1;
@@ -99,7 +101,6 @@
     @extend %gradient3;
     color: $fontColorLight;
     box-shadow:$grayDark 0 0 0 0 inset, $white 0 0 0 0, 1px 3px 6px 0 rgb(0 0 0 / 0.15);
-    // overflow: hidden;
     transition: .2s;
     &:hover{
       translate: 0 -5px;
@@ -394,5 +395,5 @@
 // 排序
 .sorting {
   text-align: right;
-  margin-bottom: 8px;
+  margin-bottom: 8px; margin-right: 8px;
 }

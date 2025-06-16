@@ -60,7 +60,7 @@ button.closeThis{
 // ---------------------------------------------------------------- //
 
 
-
+// 左右箭頭
 // ---------------------------------------------------------------- //
 .navArrow {
   position: relative;
@@ -85,19 +85,19 @@ button.closeThis{
   }
 
   &:hover{
-    background-color: $grayLight;
+    background-color: $white;
+    box-shadow: $white 0 0 0 2px;
   }
   &:focus {
-    background-color: $secondaryColor30;
+    background-color: $secondaryColor;
+    box-shadow: $white 0 0 0 2px;
     &::before{ border-color: $white;}
   }
 
   &[disabled] {
+    opacity: .3;
+    box-shadow: none;
     cursor:not-allowed;
-    &::before{ border-color: $borderColor;}
-    &:hover{
-      background-color: $grayPale;
-    }
   }
 }
 // ---------------------------------------------------------------- //

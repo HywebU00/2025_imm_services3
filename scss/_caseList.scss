@@ -1,10 +1,132 @@
-// 6/13 **********************************************************************
+// 案件查詢
+// ---------------------------------------------------------------- //
+.caseSearch{
+  border-bottom: 1px solid $borderColor;
+  padding-bottom: 16px;
+  display: flex; flex-flow: row wrap; gap: 12px;
+  align-items: flex-start;
+  justify-content: center;
+  .dateRange{
+    flex: 0 0 auto;
+    width: fit-content; margin: 0;
+    display: flex; justify-content: center;
+    align-items: center; gap:6px;
+    font-size: 1.1em;
+    background-color: $grayDark; color: $white;
+    border-radius: 2em;
+    .period{ white-space: nowrap;}
+  }
+  
+  .buttonGroup{
+    margin: 0;
+    white-space: nowrap;
+    .button>a, button{
+      @extend %button1;
+      padding-left: 24px; padding-right: 24px;
+      &::before {
+        content: ''; 
+        display: inline-block; vertical-align: middle;
+        margin: -2px 8px 0 0;
+        width: 20px; height: 20px; 
+        background-size: 100%;
+      }
+      &:focus{
+        &::before { filter: brightness(30);}
+      }      
+    }
+    button{
+      &::before {
+        background: url(../images/icon_date.svg) no-repeat 0 0;
+      }
+    }
+    .button>a{
+      position: relative;
+      &::before {
+        background: url(../images/icon_search.svg) no-repeat 0 0;
+      }
+    }
+  
+  }
+
+  &:has(+.oneCase) {margin-bottom: 8px; border-bottom: none;}
+
+  @media screen and (min-width: $wwNormal){
+    margin: 32px auto 16px;
+    justify-content: space-between;
+    .dateRange { gap: 16px;}
+    .buttonGroup{ margin: 0;}
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+// 過濾條件
+// ---------------------------------------------------------------- //
+.filterTerms{
+  margin: 24px auto;
+  ul{ 
+    list-style: none; margin: 0; padding:8px 0; line-height: 1.2;
+    display: flex; flex-wrap: wrap; gap: 16px;
+  }
+  li{
+    a {
+      display: block; text-decoration: none; color: $fontColor;
+      padding: .7em 14px .65em 20px; border-radius: 2em;
+      white-space: nowrap;
+      background-color: $white;
+      box-shadow:$white 0 0 0 0, $shadow1 0 3px 8px;
+      transition: .2s;
+      .count{
+        display: inline-block; text-align: center;
+        height: 1.4em; line-height: 1.5; min-width: 1.4em;
+        margin-left: 6px; padding:0 8px;
+        border-radius: 1em;
+        background-color: $grayDark; color: $white;
+      }
+      &:hover {
+        box-shadow:$white 0 0 0 3px, $shadow1 0 3px 8px 3px;
+      }
+      &:focus {
+        box-shadow:$grayDark 0 0 0 2px, $shadow1 0 3px 8px 2px;
+      }
+    }
+
+    &.active{
+      a{
+        background-color: $secondaryColor30; color: $white;
+        .count{
+          background-color: $grayPale; color: $fontColor;
+        }
+        &:hover {
+          box-shadow:$secondaryColor30 0 0 0 3px, $shadow1 0 3px 8px 3px;
+        }
+        &:focus {
+          box-shadow:$secondaryColor30 0 0 0 3px, $shadow1 0 3px 8px 2px, $white 0 0 0 1px inset;
+        }
+      
+      }
+    }
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+// 案件查詢結果
+// ---------------------------------------------------------------- //
+.caseList{
+
+}
+
 .oneCase {
   border: 1px solid $borderColor;
   margin: 0 0 16px; 
   padding: min(2vw, 16px);
   border-radius: $radius2;
 
+  button {
+    @extend %button1;
+    height: 2.5em; padding-left: 16px; padding-right: 16px;
+  }  
   // 申請案號
   .caseId{
     display: flex; flex-flow: row wrap; justify-content: space-between;
@@ -18,7 +140,18 @@
       }
     }
     button {
-      margin:4px; padding-left: 16px; padding-right: 16px;
+      margin:4px;
+      &::before {
+        content: ''; 
+        display: inline-block; vertical-align: middle;
+        margin: -1px 8px 1px 0;
+        width: 20px; height: 24px;
+        background-size: 100%;
+        background: url(../images/icon_doc.svg) no-repeat 0 0;
+      }
+      &:focus{
+        &::before {filter: brightness(20);}
+      }
     }
   }
 
@@ -145,9 +278,6 @@
   }
 
 }
-
-
-
 // ---------------------------------------------------------------- //
 
 
@@ -155,51 +285,13 @@
 
 
 
-// 案件查詢
-// ---------------------------------------------------------------- //
-.caseSearch{
-
-  .dateRange{
-    display: flex; justify-content: center;
-    align-items: center; gap:5px;
-
-    font-size: 1.1em;
-  }
-  
-  .buttonGroup{
-    margin: 10px auto 40px;
-    text-align: center;
-    .button>a,
-    button{
-      @extend %gradient3;
-      box-shadow: $shadow1 0 4px 6px -2px;
-      padding-left: 24px; padding-right: 24px;
-  
-    }
-    .button{
-      
-      &>a{
-      }
-    }
-  
-  }
 
 
-  @media screen and (min-width: $wwMedium){
-    margin: 10px auto 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .buttonGroup{ margin: 0;}
-  }
-}
-// ---------------------------------------------------------------- //
-
-
-
+// 
 // ---------------------------------------------------------------- //
 .searchCaseData {
+  outline: 1px solid #f008;
+  outline-offset: -1px;
   .data{
     em{ font-style: normal; font-size: 1.2em; font-weight: bold;}
   }
@@ -209,53 +301,11 @@
 }
 
 
-// 
-// ---------------------------------------------------------------- //
-.filterTerms{
-  margin: 32px auto;
-  ul{ 
-    list-style: none; margin: 0; padding:8px 0; line-height: 1.2;
-    display: flex; flex-wrap: wrap; gap: 16px;
-  }
-  li{
-    a {
-      display: block; text-decoration: none; color: $fontColor;
-      padding: .8em 16px .7em 20px; border-radius: 2em;
-      white-space: nowrap;
-      background-color: $grayPale;
-      box-shadow: $shadow1 0 3px 8px;
-      border-bottom: 1px solid $white;
-      .count{
-        display: inline-block; text-align: center;
-        height: 1.4em; line-height: 1.5; min-width: 1.4em;
-        margin-left: 6px; padding:0 8px;
-        border-radius: 1em;
-        background-color: $grayDark;
-        color: $white;
-      }
-      &:hover, &:focus {
-      }
-    }
-
-    &.active{
-      a{
-        background-color: $secondaryColor; color: $white;
-        border-bottom-color: transparent;
-        .count{
-          background-color: $grayPale;
-          color: $fontColor;
-        }
-      }
-    }
-  }
-
-}
-// ---------------------------------------------------------------- //
-
-
 // 表格條列
 // ---------------------------------------------------------------- //
 .list{
+  outline: 1px solid #f008;
+  outline-offset: -1px;
   margin: 40px auto;
   &>table {
 

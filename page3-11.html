@@ -41,9 +41,9 @@
 
       <section class="caseSearch">
         <div class="dateRange">
-          <button class="navArrow prev"></button>
+          <button class="navArrow prev" aria-label="往前"></button>
           <div class="period"><time aria-label="起始日期">2024/05</time> - <time aria-label="結束日期">2024/10</time></div>
-          <button class="navArrow next" disabled></button>
+          <button class="navArrow next" aria-label="往後" disabled></button>
         </div>
         <div class="buttonGroup">
           <button type="button">自訂查詢區間</button>
@@ -215,6 +215,24 @@
         </section>
 
       </section>
+
+      <section class="pagination">
+        <ul class="page">
+          <li class="prev"><a title="上一頁" href="#">上一頁</a></li>
+          <li><a title="1" href="#">1</a></li>
+          <li><a title="2" href="#">2</a></li>
+          <li class="active"><a title="3" href="#">3</a></li>
+          <li><a title="4" href="#">4</a></li>
+          <li><a title="5" href="#">5</a></li>
+          <li><a title="6" href="#">6</a></li>
+          <li><a title="7" href="#">7</a></li>
+          <li><a title="8" href="#">8</a></li>
+          <li><a title="9" href="#">9</a></li>
+          <li><a title="10" href="#">10</a></li>
+          <li class="next"><a title="下一頁" href="#">下一頁</a></li>
+        </ul>
+      </section>
+
     </section>
 
   </main>

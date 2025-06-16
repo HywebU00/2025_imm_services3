@@ -1,0 +1,87 @@
+// 分頁
+// ------------------------------------------------------ //
+.pagination {
+  // @extend %primSecWidth;
+  --tinge: #{$secondaryColor};
+  --em: #{$fontColorDark};
+
+  text-align: center;font-size: 1.1em; line-height: 1.5;
+  letter-spacing: 0;
+  margin:30px auto 0;
+
+  input{font-size: inherit; height: 2.4em; line-height: 2.4;}
+  a{text-decoration: none;}
+  ul.page{ 
+    display: flex; flex-flow: row wrap; justify-content: center;
+    list-style: none; line-height: 1; letter-spacing: 0;
+    margin:16px auto; padding: 3px; font-weight: bold;
+    &>li{ 
+      flex: 0 0 auto; margin:5px 3px; padding: 0;
+      &:hover{ border-color: var(--tinge);}
+      a{ 
+        display: block; min-width: 2.4em;height: 2.4em; line-height: 2.4;
+        position: relative; bottom: 0; padding: 0 5px;
+        color: var(--em);
+        border-radius: $radius;
+        transition:box-shadow .2s, background .2s;
+        &:hover {box-shadow: var(--tinge) 0 0 0 1px;}
+        &:focus {box-shadow: var(--tinge) 0 0 0 2px;}
+      }
+      
+      &.active{
+        a{
+          color: $white; background-color: var(--tinge);
+          &:hover, &:focus{ 
+            box-shadow:$white 0 0 0 1px inset, var(--tinge) 0 0 0 3px;
+          }
+        }
+      }
+
+      // 箭頭
+      &.first, &.prev, &.next, &.last{
+        margin: 5px; text-indent: -20em;
+        a{ 
+          position: relative; overflow: hidden; padding: 0;
+          box-shadow: $borderColor 0 0 0 1px;
+          &::before, &::after { 
+            content: ''; position: absolute;
+            border-style: solid; border-width: 2px; border-color: $black;
+          }
+          &::after{ // 直角
+            width:10px; height:10px; top: calc(50% - 5px);
+            border-top: none; border-right: none;
+            transform: rotate(45deg);
+          }
+          &:hover{
+            box-shadow: var(--tinge) 0 0 0 1px;
+          }
+          &:focus{
+            box-shadow: var(--tinge) 0 0 0 2px;
+          }
+        }
+      }
+      &.first, &.last{
+        a{
+          &::before{ // 直線
+            top: calc(50% - 8px);
+            width: 0; height: 16px;
+            border-right:none;
+          }
+        }
+      }
+      &.next, &.last{
+        a::after{transform: rotate(225deg);}
+      }
+      &.first a::before {left: 19px; }
+      &.first a::after {left: 23px; }
+      &.prev a::after{left: 21px; }
+      &.next a::after{right: 20px;}
+      &.last a{
+        &::before{ right: 20px;}
+        &::after{ right: 24px;}
+      }
+    }
+  }
+
+}
+// ------------------------------------------------------ //

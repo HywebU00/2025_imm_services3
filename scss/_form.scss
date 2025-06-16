@@ -47,22 +47,19 @@ input[type="date"]{
   @media screen and (max-width: calc($wwNormal - 1px)){
     // &.fullWidth { width: calc(100% - 1.2em - 2px);}
   }
-
 }
-
-
-
 // ---------------------------------------------------------------- //
 
 
 // 下拉選單
 // ---------------------------------------------------------------- //
 select {
+  appearance: none;
   height: $inputHeight;
   margin: 5px 0; padding: 0 40px 0 .6em;
   border-radius: $radius;
   border: 1px solid $grayLight;
-  background-color: $white;
+  background: $white url(../images/selectArrow.svg) no-repeat right 6px top .8em;;
   color: $primaryColor;
 
   &:hover{
@@ -88,7 +85,7 @@ input[type="reset"],
 input[type="button"] {
   cursor: pointer;
   height: $inputHeight;margin: 5px;
-  border-radius: $radius1;
+  border-radius: $radius;
   outline: none; border: none;
 
 }
@@ -99,7 +96,7 @@ input[type="button"] {
   a{
     display: block;
     height: $inputHeight; line-height: $inputHeight;
-    border-radius: $radius1;
+    border-radius: $radius;
     text-decoration: none; color: $fontColor;
   }
 }
