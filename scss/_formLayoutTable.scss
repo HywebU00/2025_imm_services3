@@ -94,3 +94,39 @@ table.formLayout {
   }
 }
 // ---------------------------------------------------------------- //
+
+
+
+// 申請資格驗證
+// ---------------------------------------------------------------- //
+.verify{
+  &>.note{
+    text-align: center;
+  }
+  table.formLayout {
+    width: auto;
+    tr{ border: none;}
+    th, td:nth-child(odd) { width: auto; white-space: nowrap; }
+    td:nth-child(even){ 
+      width: auto; min-width: 24em;
+      .datePicker,
+      input[type="text"]{ width: 100%; }
+    }
+  }
+  @media screen and (max-width: calc($wwNormal - 1px)){
+    &>.note{
+      max-width: 680px;
+      margin-left: auto; margin-right: auto;
+      text-align: left;
+    }
+    
+    table.formLayout {
+      width: 100%; max-width: 600px;
+      td:nth-child(even) { 
+        padding-bottom: 0;min-width:0;
+        border-bottom: none;
+      }
+    }
+  }
+}
+// ---------------------------------------------------------------- //
