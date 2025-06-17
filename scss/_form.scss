@@ -71,7 +71,9 @@ select {
     outline: none;
   }
 
-    &.fullWidth {width: 100%;}
+  &[disabled] {color: $fontColorPale}
+
+  &.fullWidth {width: 100%;}
 }
 // ---------------------------------------------------------------- //
 
@@ -116,6 +118,8 @@ input[type="checkbox"]{
     // box-shadow: $grayDark 0 0 0 1px;
   }
 }
+
+label:has(input) {cursor: pointer;}
 // ---------------------------------------------------------------- //
 
 
