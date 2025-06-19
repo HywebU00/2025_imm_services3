@@ -1,0 +1,46 @@
+// 親屬及子女問題列表
+// ---------------------------------------------------------------- //
+.questions {
+  ul{
+    list-style: none; margin: 0 auto; padding: 8px;
+    line-height: 1.5;
+    width: max-content; max-width: 100%;
+  }
+
+  li{
+    margin: 1em 0 2em; padding: 0;
+    &>p{
+      position: relative;
+      margin:0 0 .5em; padding-left: 1em;
+      font-weight: bold;
+      abbr{position: absolute; left: 0;}
+      
+    }
+    &>.optionPool {margin:0 0 0 1em;}
+    &>select{ width: 5em; margin-left: 1em;}
+  }
+}
+// ---------------------------------------------------------------- //
+
+
+
+// 申請人之「子女」資料
+// ---------------------------------------------------------------- //
+table.childrenList {
+  width: 100%; margin: 0 auto;
+  border-collapse: collapse;
+  thead {
+    th{padding-bottom: 8px;}
+  }
+  tbody {
+    th, td {
+      padding: 4px 8px;
+    }
+
+    td{
+      &:first-child { text-align: center; width: 2.5em; padding: 4px;}
+      input[type="text"] {width: 100%;}
+    }
+  }
+}
+// ---------------------------------------------------------------- //

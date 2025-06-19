@@ -50,10 +50,10 @@
       <h3>親屬及子女</h3>
       <p class="note"><abbr class="required">必填欄位</abbr>為必須填寫的資料欄位</p>
       <form action="">
-        <section>
-          <ul class="questions">
+        <section class="questions">
+          <ul>
             <li>
-              <p><abbr class="required">必填欄位</abbr> 申請人至今為止(含本次)之結婚次數？</p>
+              <p><abbr class="required">必填欄位</abbr>申請人至今為止(含本次)之結婚次數？</p>
               <select name="" id="">
                 <option value="">1</option>
                 <option value="" selected>2</option>
@@ -75,41 +75,41 @@
             <li>
               <p><abbr class="required">必填欄位</abbr> 申請人之「父」符合以下何種情形？</p>
               <div class="optionPool">
-                <label><input type="radio">存</label>
-                <label><input type="radio">歿</label>
-                <label><input type="radio">離婚</label>
+                <label><input name="q3" type="radio">存</label>
+                <label><input name="q3" type="radio" checked>歿</label>
+                <label><input name="q3" type="radio">離婚</label>
               </div>
             </li>
             <li>
               <p><abbr class="required">必填欄位</abbr> 申請人之「母」符合以下何種情形？</p>
               <div class="optionPool">
-                <label><input type="radio">存</label>
-                <label><input type="radio">歿</label>
-                <label><input type="radio">離婚</label>
+                <label><input name="q4" type="radio" checked>存</label>
+                <label><input name="q4" type="radio">歿</label>
+                <label><input name="q4" type="radio">離婚</label>
               </div>
             </li>
             <li>
               <p><abbr class="required">必填欄位</abbr> 申請人是否有「養父母」？(可複選)</p>
               <div class="optionPool">
-                <label><input type="radio">是，有養父</label>
-                <label><input type="radio">是，有養母</label>
-                <label><input type="radio">否</label>
+                <label><input name="q5" type="checkbox">是，有養父</label>
+                <label><input name="q5" type="checkbox">是，有養母</label>
+                <label><input name="q5" type="checkbox">否</label>
               </div>
             </li>
             <li>
               <p><abbr class="required">必填欄位</abbr> 申請人之「養父」符合以下何種情形？</p>
               <div class="optionPool">
-                <label><input type="radio">存</label>
-                <label><input type="radio">歿</label>
-                <label><input type="radio">離婚</label>
+                <label><input name="q6" type="radio">存</label>
+                <label><input name="q6" type="radio">歿</label>
+                <label><input name="q6" type="radio">離婚</label>
               </div>
             </li>
             <li>
               <p><abbr class="required">必填欄位</abbr> 申請人之「養母」符合以下何種情形？</p>
               <div class="optionPool">
-                <label><input type="radio">存</label>
-                <label><input type="radio">歿</label>
-                <label><input type="radio">離婚</label>
+                <label><input name="q7" type="radio">存</label>
+                <label><input name="q7" type="radio">歿</label>
+                <label><input name="q7" type="radio">離婚</label>
               </div>
             </li>
           </ul>
@@ -140,7 +140,6 @@
               <td><abbr class="required">必填欄位</abbr> 身分證號</td>
               <td><input class="fullWidth" type="text" value=""></td>
             </tr>
-
             <tr>
               <td><abbr class="required">必填欄位</abbr> 護照號碼</td>
               <td><input class="fullWidth" type="text"></td>
@@ -177,8 +176,6 @@
             </tr>
           </table>
 
-
-
           <div class="title">申請人之「養父」資料</div>
           <table class="formLayout">
             <tr>
@@ -206,8 +203,9 @@
               <td></td>
             </tr>
           </table>
+
           <div class="title">申請人之「子女」資料</div>
-          <table>
+          <table class="childrenList">
             <thead>
               <tr>
                 <th>項次</th>

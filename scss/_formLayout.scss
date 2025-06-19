@@ -107,7 +107,8 @@
 // 選日期套件（跳出小日曆）
 // ---------------------------------------------------------------- //
 .datePicker {
-  position: relative; width: 50%; min-width: 16em; 
+  position: relative; 
+  // min-width: 16em; 
   input[type="text"], input[type="date"] {
     width: 100%; 
     padding-right: 3em;
@@ -132,6 +133,12 @@
         box-shadow: $white 0 0 0 1px inset, $grayDark 0 0 0 2px;
       }
     }
+  }
+}
+
+.formLayout {
+  td{
+    .datePicker { width: 100%;}
   }
 }
 // ---------------------------------------------------------------- //
