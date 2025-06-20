@@ -257,7 +257,13 @@
 // 一段文字後面跟著 是／否 選項
 .aloneInput {
   line-height: 1.6;
-  .optionPool{ display: inline-block; margin-left: 16px;}
+  .optionPool{ 
+    margin-left: 16px; margin-top: 8px;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .optionPool{display: inline-block; }
+  }
 }
 
 // 前面有一個 checkbox 或 radio 的一段文字

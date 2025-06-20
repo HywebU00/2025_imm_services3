@@ -91,6 +91,9 @@ table.formLayout {
   .note, .aloneInput, .aloneCheck { margin: 32px auto;}
   .aloneCheck {display: block;}
 
+  .aloneInput + .note { margin-top: 3em;}
+  .note:has(+.formLayout){ margin-bottom: 8px;}
+
   @media screen and ( max-width: calc($wwNormal - 1px) ) {
     table.formLayout{
       td:nth-child(even),
