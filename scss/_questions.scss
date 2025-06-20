@@ -30,16 +30,54 @@ table.childrenList {
   width: 100%; margin: 0 auto;
   border-collapse: collapse;
   thead {
-    th{padding-bottom: 8px;}
+    th{
+      padding-top: 8px;padding-bottom: 8px;
+      &:first-child{ text-align: right;}
+      &:last-child{padding-right: 24px;}
+    }
   }
   tbody {
-    th, td {
-      padding: 4px 8px;
-    }
-
+    th, td {padding: 4px 8px;}
     td{
-      &:first-child { text-align: center; width: 2.5em; padding: 4px;}
+      &:first-child { text-align: right;}
+      &:last-child{ padding-right: 24px;}
       input[type="text"] {width: 100%;}
+    }
+  }
+
+  @media screen and (max-width: calc($wwNormal - 1px)){
+    thead{ display: none;}
+    tr {
+      display: block;
+      margin: 10px 0 30px;  padding: 4px 4px 12px;
+      border: 1px solid $borderColor;
+      border-radius: $radius1;
+    }
+    tbody {
+      td{
+        display: flex;
+        &::before {
+          content: attr(aria-label);
+          white-space: nowrap;
+          margin: .9em 8px 0 auto;
+          flex: 0 0 5.5em;
+          text-align: right;
+        }
+        &:first-child{
+          text-align: center; width: max-content;
+          margin: -20px auto auto 8px;
+          padding: 4px 1em 3px;
+          border-radius: 2em; 
+          background-color: $grayDark;
+          color: $white;
+          &::before{ display: none;}
+        }
+          &:last-child{ padding-right: 8px;}
+        
+        .datePicker{ width: 100%; }
+
+        &:has(input[required]){}
+      }
     }
   }
 }
