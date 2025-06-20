@@ -55,7 +55,7 @@
             <td><abbr class="required">必填欄位</abbr> 大陸身分證</td>
             <td><input class="fullWidth" type="text" readonly value="323234198001011368"></td>
             <td><abbr class="required">必填欄位</abbr> 中文姓名</td>
-            <td><input class="fullWidth" type="text" value="林試范"></td>
+            <td><input required class="fullWidth" type="text" value="林試范"></td>
           </tr>
           <tr>
             <td>原名</td>
@@ -72,12 +72,12 @@
             <td><abbr class="required">必填欄位</abbr> 出生地</td>
             <td>
               <div class="dualSelect">
-                <select>
+                <select required>
                   <option value="">湖南</option>
                   <option value="">...</option>
                   <option value="">...</option>
                 </select>
-                <select>
+                <select required>
                   <option value="">長沙</option>
                   <option value="">...</option>
                   <option value="">...</option>
@@ -93,13 +93,13 @@
             <td><abbr class="required">必填欄位</abbr> 性別</td>
             <td>
               <div class="optionPool">
-                <label><input name="xxx" type="radio">男</label>
-                <label><input name="xxx" type="radio" checked>女</label>
+                <label><input required name="xxx" type="radio">男</label>
+                <label><input required name="xxx" type="radio" checked>女</label>
               </div>
             </td>
             <td><abbr class="required">必填欄位</abbr> 最高學歷</td>
             <td>
-              <select class="fullWidth">
+              <select required class="fullWidth">
                 <option value="">大學</option>
                 <option value="">...</option>
                 <option value="">...</option>
@@ -130,20 +130,20 @@
               <div class="addressSet">
                 <div class="roughly">
                   <label>縣市
-                    <select name="" id="">
+                    <select requireds>
                       <option value="">臺北市</option>
                       <option value="">XXXXX</option>
                       <option value="">XXXXX</option>
                     </select>
                   </label>
                   <label>鄉鎮市區
-                    <select name="" id="">
+                    <select requireds>
                       <option value="">中正區</option>
                       <option value="">XXXXX</option>
                       <option value="">XXXXX</option>
                     </select>
                   </label>
-                  <input aria-label="郵遞區號" type="text" value="100">
+                  <input required aria-label="郵遞區號" type="text" value="100">
                 </div>
                 <div class="details">
                   <label><input type="text">村</label>
@@ -172,19 +172,19 @@
               <td><abbr class="required">必填欄位</abbr> 海外居住電話</td>
               <td>
                 <div class="phoneSet">
-                  <select name="" id="">
+                  <select required>
                     <option value="">請選擇國碼</option>
                     <option value="">XXXXX</option>
                     <option value="">XXXXX</option>
                   </select>
-                  <input type="tel" name="" id="">
+                  <input required type="tel">
                   <label><input type="checkbox">無</label>
                 </div>
               </td>
             </tr>
             <tr>
               <td>海外居住地址</td>
-              <td><input class="fullWidth" type="text" name="" id=""></td>
+              <td><input class="fullWidth" type="text"></td>
             </tr>
           </table>
 
@@ -195,13 +195,13 @@
               <td><abbr class="required">必填欄位</abbr> 海外居住電話</td>
               <td>
                 <div class="phoneSet">
-                  <select name="" id="">
+                  <select  required>
                     <option value="">請選擇國碼</option>
                     <option value="">XXXXX</option>
                     <option value="">XXXXX</option>
                   </select>
-                  <input type="tel" name="" id="">
-                  <label> <input type="checkbox">無</label>
+                  <input type="tel"  required>
+                  <label><input type="checkbox">無</label>
                 </div>
               </td>
             </tr>
