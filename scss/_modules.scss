@@ -229,6 +229,7 @@
   .browseFile {
     margin: 16px auto 0;
     width: 10em;
+    input[type="file"] {width: 0; font-size: 0;}
   }
 
   &:hover{
