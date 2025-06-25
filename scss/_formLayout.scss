@@ -120,10 +120,11 @@
     background-color: $grayPale;
     transition: .15s;
     &::before {
-      content: ''; display: block; width: 18px; height: 18px;
-      margin: auto;
+      content: ''; position: absolute; 
+      width: 18px; height: 18px;
+      left: calc(50% - 9px); top: calc(50% - 9px);
       background: url(../images/icon_date.svg) no-repeat center center;
-      background-size: contain;
+      background-size:100%;
       transition: .15s;
     }
     &:hover, &:focus {
@@ -303,6 +304,19 @@
 // 國碼＋電話號碼
 // ---------------------------------------------------------------- //
 .phoneSet{
-  input + label{ margin-left: 16px;}
+  &>select {max-width: 100%;}
+  &>input {width: 100%;}
+  &>label{ 
+    display: inline-block;
+    padding: 8px;   
+  }
+  
+  @media screen and (min-width: $wwMedium){
+    display: flex; flex-wrap: wrap;
+    align-items: center;
+    &>select{ flex: 0 1 30%; max-width: 8em;}
+    &>input { flex: 1 1 50%; margin-left: 6px;}
+    &>label { margin-left: 12px;}
+  }
 }
 // ---------------------------------------------------------------- //

@@ -13,7 +13,10 @@
       position: relative;
       margin:0 0 .5em; padding-left: 1em;
       font-weight: bold;
-      abbr{position: absolute; left: 0;}
+      abbr{
+        position: absolute; left: 0; top: 2px;
+        padding: 0; margin: 0; width: .6em;
+      }
       
     }
     &>.optionPool {margin:0 0 0 1em;}

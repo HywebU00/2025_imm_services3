@@ -10,12 +10,14 @@
 // --------------------------------------------------------------- //
 abbr.required{
   display: inline-block; 
+  margin:0; 
   position: relative;
   color: $hilight;  text-decoration: none;
   
-  margin:0 3px auto auto; padding-right: .8em;
-  overflow: hidden; 
+  // padding-right: .8em;
   text-indent:  -5em; line-height: 1;
+  width: .55em;
+  overflow: hidden; 
 
   &::before {
     content: '*'; font-size: 1.2em;
