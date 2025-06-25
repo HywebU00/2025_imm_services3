@@ -53,9 +53,9 @@
         <table class="formLayout">
           <tr>
             <td><abbr class="required">必填欄位</abbr> <label for="name">姓名</label></td>
-            <td><input class="fullWidth" type="text" value="陳澄"></td>
+            <td><input required class="fullWidth" type="text" value="陳澄"></td>
             <td><label for="idNumber"><abbr class="required">必填欄位</abbr> 身分證號</label></td>
-            <td><input class="fullWidth hightLightThis" id="idNumber" type="text" value="U156139432">
+            <td><input required class="fullWidth hightLightThis" id="idNumber" type="text" value="U156139432">
               <p class="msg error" style="display: block;">您輸入的格式有誤！<button class="closeThis" type="button">隱藏</button>
               </p>
             </td>
@@ -64,8 +64,8 @@
             <td><abbr class="required">必填欄位</abbr>性別</td>
             <td>
               <div class="optionPool">
-                <label><input name="xxx" type="radio">男</label>
-                <label><input name="xxx" type="radio">女</label>
+                <label><input required name="xxx" type="radio">男</label>
+                <label><input required name="xxx" type="radio">女</label>
               </div>
             </td>
             <td><label for="date-of-birth">出生日期</label></td>
@@ -78,7 +78,7 @@
           </tr>
           <tr>
             <td><abbr class="required">必填欄位</abbr>聯絡電話</td>
-            <td><input class="fullWidth" type="tel" value="" placeholder="請輸入加上區碼的市話或行動電話號碼"></td>
+            <td><input required class="fullWidth" type="tel" value="" placeholder="請輸入加上區碼的市話或行動電話號碼"></td>
             <td>目前職業</td>
             <td>
               <select class="fullWidth" name="" id="">
@@ -95,14 +95,14 @@
               <div class="addressSet">
                 <div class="roughly">
                   <label>縣市
-                    <select name="" id="">
+                    <select required>
                       <option value="">臺北市</option>
                       <option value="">XXXXX</option>
                       <option value="">XXXXX</option>
                     </select>
                   </label>
                   <label>鄉鎮市區
-                    <select name="" id="">
+                    <select required>
                       <option value="">中正區</option>
                       <option value="">XXXXX</option>
                       <option value="">XXXXX</option>
@@ -144,7 +144,7 @@
             <tr>
               <td><abbr class="required">必填欄位</abbr>與申請人關係</td>
               <td>
-                <select class="fullWidth">
+                <select required class="fullWidth">
                   <option value="" selected>移民機構</option>
                   <option value="">...</option>
                   <option value="">...</option>
@@ -154,7 +154,7 @@
             <tr>
               <td><abbr class="required">必填欄位</abbr>姓名</td>
               <td>
-                <input class="fullWidth hightLightThis" type="text" value="艾邦忙">
+                <input required class="fullWidth hightLightThis" type="text" value="艾邦忙">
                   <p class="msg info" style="display: block;">這是一般提醒訊息區塊
                     <button class="closeThis" type="button">隱藏</button>
                   </p>
@@ -168,20 +168,20 @@
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr>身分證號</td>
-              <td><input type="text" class="fullWidth" value="V325579412"></td>
+              <td><input required type="text" class="fullWidth" value="V325579412"></td>
             </tr>
             <tr>
               <td><label for="date-of-birth"><abbr class="required">必填欄位</abbr>出生日期</label></td>
               <td>
                 <div class="datePicker">
-                  <input id="date-of-birth" type="text" value="1991-01-24">
+                  <input required id="date-of-birth" type="text" value="1991-01-24">
                   <button type="button" class="date"></button>
                 </div>
               </td>
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr>聯絡電話</td>
-              <td><input class="fullWidth" type="tel" value="0988888888"></td>
+              <td><input required class="fullWidth" type="tel" value="0988888888"></td>
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr>聯絡地址</td>
@@ -189,14 +189,14 @@
                 <div class="addressSet">
                   <div class="roughly">
                     <label>縣市
-                      <select name="" id="">
+                      <select required name="" id="">
                         <option value="">臺北市</option>
                         <option value="">XXXXX</option>
                         <option value="">XXXXX</option>
                       </select>
                     </label>
                     <label>鄉鎮市區
-                      <select name="" id="">
+                      <select required name="" id="">
                         <option value="">中正區</option>
                         <option value="">XXXXX</option>
                         <option value="">XXXXX</option>
@@ -226,8 +226,8 @@
             <abbr class="required">必填欄位</abbr> 
             <strong>本案「保證人」是否為上述之臺灣配偶？</strong>
             <div class="optionPool">
-              <label><input name="yesorno" type="radio">是</label>
-              <label><input name="yesorno" type="radio">否</label>
+              <label><input required required name="yesorno" type="radio">是</label>
+              <label><input required name="yesorno" type="radio">否</label>
             </div>
           </div>          
           <p class="note">請填寫以下「保證人」資料：</p>
@@ -238,7 +238,7 @@
             <tr>
               <td><abbr class="required">必填欄位</abbr> 與申請人關係</td>
               <td>
-                <select class="fullWidth">
+                <select required class="fullWidth">
                   <option value="" selected>移民機構</option>
                   <option value="">...</option>
                   <option value="">...</option>
@@ -248,7 +248,7 @@
             <tr>
               <td><abbr class="required">必填欄位</abbr>中文姓名</td>
               <td>
-                <input class="fullWidth" type="text" value="艾邦忙">
+                <input required class="fullWidth" type="text" value="艾邦忙">
                   <p class="msg hint">這是一般提醒訊息區塊
                     <button class="closeThis" type="button">隱藏</button>
                   </p>
@@ -273,38 +273,38 @@
               <td><abbr class="required">必填欄位</abbr>性別</td>
               <td>
                 <div class="optionPool">
-                  <label><input name="xxx" type="radio">男</label>
-                  <label><input name="xxx" type="radio">女</label>
+                  <label><input required name="xxx" type="radio">男</label>
+                  <label><input required name="xxx" type="radio">女</label>
                 </div>
                 <p class="msg warning" style="display: block;">此為必填欄位<button class="closeThis" type="button">隱藏</button></p>
               </td>
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr>身分證號 /<br>居留證號</td>
-              <td><input class="fullWidth" type="text" value="V325579412"></td>
+              <td><input required class="fullWidth" type="text" value="V325579412"></td>
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr> 出生日期</td>
               <td>
                 <div class="datePicker">
-                  <input id="date-of-birth" type="text" value="1991-01-24">
+                  <input required id="date-of-birth" type="text" value="1991-01-24">
                   <button type="button" class="date"></button>
                 </div>
               </td>
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr> 聯絡電話</td>
-              <td><input class="fullWidth" type="tel" value="0988888888"></td>
+              <td><input required class="fullWidth" type="tel" value="0988888888"></td>
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr> 服務機關</td>
-              <td><input class="fullWidth hightLightThis" type="text" value="">
+              <td><input required class="fullWidth hightLightThis" type="text" value="">
                 <p class="msg warning" style="display: block;">此為必填欄位<button class="closeThis" type="button">隱藏</button></p>
               </td>
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr> 職務名稱</td>
-              <td><input class="fullWidth hightLightThis" type="text" value="">
+              <td><input required class="fullWidth hightLightThis" type="text" value="">
                 <p class="msg warning" style="display: block;">此為必填欄位<button class="closeThis" type="button">隱藏</button></p>
               </td>
             </tr>
@@ -314,14 +314,14 @@
                 <div class="addressSet">
                   <div class="roughly">
                     <label>縣市
-                      <select name="" id="">
+                      <select required>
                         <option value="">臺北市</option>
                         <option value="">XXXXX</option>
                         <option value="">XXXXX</option>
                       </select>
                     </label>
                     <label>鄉鎮市區
-                      <select name="" id="">
+                      <select required>
                         <option value="">中正區</option>
                         <option value="">XXXXX</option>
                         <option value="">XXXXX</option>

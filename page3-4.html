@@ -53,7 +53,7 @@
         <table class="formLayout">
           <tr>
             <td><abbr class="required">必填欄位</abbr> 姓名</td>
-            <td><input class="fullWidth" type="text" value="陳澄"></td>
+            <td><input required class="fullWidth" type="text" value="陳澄"></td>
             <td>身分證號</td>
             <td><input class="fullWidth" type="text" value="U156139432"></td>
           </tr>
@@ -61,8 +61,8 @@
             <td><abbr class="required">必填欄位</abbr> 性別</td>
             <td>
               <div class="optionPool">
-                <label><input name="yyyy" type="radio" checked>男</label>
-                <label><input name="yyyy" type="radio">女</label>
+                <label><input required name="yyyy" type="radio" checked>男</label>
+                <label><input required name="yyyy" type="radio">女</label>
               </div>              
             </td>
             <td>出生日期</td>
@@ -75,7 +75,7 @@
           </tr>
           <tr>
             <td><abbr class="required">必填欄位</abbr> 聯絡電話</td>
-            <td><input type="tel" class="fullWidth" name="" id="" placeholder="請輸入加上區碼的市話或行動電話號碼"></td>
+            <td><input required type="tel" class="fullWidth" name="" id="" placeholder="請輸入加上區碼的市話或行動電話號碼"></td>
             <td>目前職業</td>
             <td>
               <select class="fullWidth">
@@ -91,14 +91,14 @@
               <div class="addressSet">
                 <div class="roughly">
                   <label>縣市
-                    <select name="" id="">
+                    <select  required>
                       <option value="">臺北市</option>
                       <option value="">XXXXX</option>
                       <option value="">XXXXX</option>
                     </select>
                   </label>
                   <label>鄉鎮市區
-                    <select name="" id="">
+                    <select  required>
                       <option value="">中正區</option>
                       <option value="">XXXXX</option>
                       <option value="">XXXXX</option>
@@ -133,8 +133,8 @@
             <abbr class="required">必填欄位</abbr> 
             <strong>本案「代申請人」是否為上述之臺灣配偶？</strong>(若為移民機構或甲種旅行社代為申請，須額外填寫相關資料)
             <div class="optionPool">
-              <label><input name="yesorno" type="radio">是</label>
-              <label><input name="yesorno" type="radio">否</label>
+              <label><input required name="yesorno" type="radio">是</label>
+              <label><input required name="yesorno" type="radio">否</label>
             </div>
           </div>
 
@@ -142,8 +142,8 @@
             <abbr class="required">必填欄位</abbr>
             <strong>本案「保證人」是否為上述之臺灣配偶？</strong>
             <div class="optionPool">
-              <label><input name="yesorno2" type="radio">是</label>
-              <label><input name="yesorno2" type="radio">否</label>
+              <label><input required name="yesorno2" type="radio">是</label>
+              <label><input required name="yesorno2" type="radio">否</label>
             </div>
           </div>
 
@@ -160,11 +160,11 @@
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr> 服務機關</td>
-              <td><input class="fullWidth" type="text" name="" id="" value="全球科技"></td>
+              <td><input required class="fullWidth" type="text" name="" id="" value="全球科技"></td>
             </tr>
             <tr>
               <td><abbr class="required">必填欄位</abbr> 職務名稱</td>
-              <td><input class="fullWidth" type="text" name="" id="" value="首席工程師"></td>
+              <td><input required class="fullWidth" type="text" name="" id="" value="首席工程師"></td>
             </tr>
           </table>
 
