@@ -26,18 +26,17 @@
   }
 
   .base{
-    padding:24px 32px;
+    padding:32px 2.5%;
     font-size: .89em; text-align: center;
     background-color: #222b62; color: #fff;
     line-height: 1.5;
 
     &>ul{
-      list-style: none; margin: 0 auto 16px; padding: 0;
+      list-style: none; margin: 0 auto 8px; padding: 0;
       line-height: 1.1;
       li{
         display: inline-block;
-        margin: 0 .5em 1em; padding-bottom: 0;
-        &:last-child{ margin-right: 0; }
+        margin: 0 8px 15px; padding: 0;
         a{
           display: block; position: relative;
           text-decoration: none; 
@@ -66,23 +65,76 @@
     &>div{
       p{margin: 0;}
     }
+    .badge{
+      display: block;
+      width: 196px;
+      margin: 32px auto 0;
+      a{display: block; margin: 0 auto;
+        &:hover{box-shadow: $white 0 0 0 1px;}
+        &:focus{box-shadow: $white 0 0 0 2px;}
+      }
+      img{display: block; width: 100%;}
+    }
+  }
+
+  @media screen and (min-width: $wwMedium){
+    .base{
+      position: relative;
+      padding-right: 200px;
+      text-align: left;
+
+      &>ul{
+        margin-left: 0;
+        li{
+          margin:0 16px 8px 0;
+        }
+      }
+      .badge{
+        margin: 0;
+        position: absolute; right: 2.5vw; top: 24px;
+        width: 168px;
+      }
+    }
   }
 
   @media screen and (min-width: $wwNormal){
     .base{
       display: flex; justify-content: center; align-items: center;
+      padding-right: 5%; padding-left: 5%;
       &>ul{
-        flex: 1 0 auto;
-        margin-bottom: 0;
-        text-align: right;
-        li{ margin-bottom: 0;}
+        flex: 1 1 50%;
+        margin: 0;
+        max-width: max-content;
+        display: flex; flex-wrap: nowrap;
+        line-height: 1.4;
+        li{ 
+          flex:0 0 max-content;
+          margin: 0 16px 0 0;
+          a{
+            // word-break: break-all;
+          }
+        }
       }
       &>div{
-        flex: 1 0 auto; white-space: nowrap;
-        padding-left: 25px; margin-left: 25px;
+        flex: 1 1 calc(100% - 50% - 240px);
+        padding-left: 25px; margin-left: 16px;
         border-left: 1px solid #fff;
         text-align: left;
       }
+      .badge{
+        position: static;
+        flex: 0 0 168px;
+        // flex: 0 0 20%;
+        margin-top: 0;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    .base{
+      padding-left: calc(50vw - $wwMaximum*.45);
+      padding-right: calc(50vw - $wwMaximum*.45);
     }
   }
 }

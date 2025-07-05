@@ -398,3 +398,48 @@
   text-align: right;
   margin-bottom: 8px; margin-right: 8px;
 }
+
+
+
+// 使用Cookie說明
+// ---------------------------------------------------------------- //
+.cookieAgree {
+  z-index: 999;
+  position: fixed; left: 0; right: 0; bottom: 0;
+  padding: 40px 5% 16px;
+  background-color: rgb(255 255 255 / .9);
+  color: #222;
+  box-shadow: 0 -8px 24px  rgb(17 52 115 / .3);
+  backdrop-filter: blur(8px);
+
+  article{
+    line-height: 1.8;
+    a{
+      &:focus { outline: 2px solid $linkColor;text-decoration: none;}
+    }
+  }
+  .btnDiv{ margin: 0 auto;}
+
+  @media screen and (min-width: $wwNormal){
+    display: flex;
+    padding-bottom: 36px;
+    article{
+      flex: 1 1 auto;
+    }
+    .btnDiv{
+      flex: 0 0 20%;
+      margin-left: 32px;
+      padding-top: 8px; padding-left: 32px;
+      border-left: 1px solid $borderColor;
+      button{ white-space: nowrap;}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    padding-left: calc(50vw - $wwMaximum*.45);
+    padding-right: calc(50vw - $wwMaximum*.45);
+  }
+
+
+}
+// ---------------------------------------------------------------- //
